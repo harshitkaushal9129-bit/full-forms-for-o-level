@@ -1,10 +1,8 @@
 let DATA={},PRACTICAL_DATA={},active=0,deferredPrompt=null,done=JSON.parse(localStorage.getItem('oDone')||'{}');
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-
 fetch('data.json').then(r=>r.json()).then(d=>{DATA=d;init()});
 fetch('new.json').then(r=>r.json()).then(d=>{PRACTICAL_DATA=d;});
-
 function init(){
   $('#moduleCount').textContent=DATA.modules.length;
   $('#unitCount').textContent=DATA.modules.reduce((a,m)=>a+m.units.length,0);
@@ -14,12 +12,10 @@ function init(){
   updateDone();
   if(localStorage.theme==='dark')document.body.classList.add('dark');
 }
-
 function renderTabs(){
   $('#moduleTabs').innerHTML=DATA.modules.map((m,i)=>`<button class="${i===active?'active':''}" data-mod="${i}">${m.code}</button>`).join('');
   document.querySelectorAll('[data-mod]').forEach(b=>b.onclick=()=>{active=+b.dataset.mod;renderTabs();render()});
 }
-
 function render(){
   let m=DATA.modules[active],q=$('#search').value.toLowerCase();
   let units=m.units.map((u,i)=>{
@@ -39,21 +35,18 @@ function render(){
     updateDone();
   });
 }
-
 function findTopic(id){
   for(let m of DATA.modules)
     for(let u of m.units)
       for(let t of u.topics)
         if(t.id===id)return {t,u,m};
 }
-
 function showImage(id){
   let {t}=findTopic(id);
   $('#largeImage').src=t.image;
   $('#imageCaption').textContent=t.title;
   $('#imageModal').classList.remove('hidden');
 }
-
 function showTopic(id){
   let {t,u,m}=findTopic(id);
   $('#panelTitle').textContent=t.title;
@@ -67,11 +60,9 @@ function showTopic(id){
     $('#panel').classList.add('hidden');
   };
 }
-
 function updateDone(){
   $('#doneCount').textContent=Object.values(done).filter(Boolean).length;
 }
-
 const questions=[
   ['कंप्यूटर का मस्तिष्क किसे कहा जाता है?',['Monitor','CPU','RAM','Hard Disk'],1,'CPU निर्देशों को प्रोसेस करता है।'],
   ['कौन-सी मेमोरी Volatile है?',['ROM','SSD','RAM','DVD'],2,'RAM की सामग्री बिजली बंद होने पर मिट जाती है।'],
@@ -82,7 +73,6 @@ const questions=[
   ['LAN का पूरा नाम क्या है?',['Large Area Network','Local Area Network','Long Access Node','Line Area Network'],1,'LAN सीमित क्षेत्र का नेटवर्क है।'],
   ['Spreadsheet में SUM() क्या करता है?',['औसत','गिनती','जोड़','सबसे बड़ा'],2,'SUM दिए गए मानों का योग करता है।']
 ];
-
 function openQuiz(){
   let i=0,score=0;
   function next(){
@@ -111,123 +101,38 @@ function openQuiz(){
   $('#panel').classList.remove('hidden');
   next();
 }
-
 function panel(title,html){
   $('#panelTitle').textContent=title;
   $('#panelBody').innerHTML=html;
   $('#panel').classList.remove('hidden');
 }
-
-// --- Important Points Button Handler (imp.json) ---
-const importantBtn = document.getElementById('importantBtn');
-if (importantBtn) {
-  importantBtn.onclick = async () => {
-    try {
-      const response = await fetch('imp.json');
-      if (!response.ok) throw new Error('imp.json not found');
-      const data = await response.json();
-      
-      let htmlContent = '<div class="imp-container" style="display:flex;flex-direction:column;gap:14px;">';
-      if (Array.isArray(data)) {
-        data.forEach((item, index) => {
-          htmlContent += `<div style="padding:16px; background:rgba(255,255,255,0.03); border:1px solid var(--line); border-radius:14px;">
-            <h3 style="margin:0 0 8px 0; color:var(--accent); font-family:var(--font-heading); font-size:16px;">${esc(item.title || 'Important Topic')}</h3>
-            <div style="font-size:14px; color:var(--muted); line-height:1.6; white-space:pre-line;">${esc(item.description || item)}</div>
-          </div>`;
-        });
-      } else {
-        htmlContent += `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-      }
-      htmlContent += '</div>';
-
-      panel('⭐ Book Reference & Important Points', htmlContent);
-    } catch (error) {
-      panel('⭐ Important Points', '<p style="color:#ef4444;">imp.json फ़ाइल लोड करने में विफल रही। कृपया जाँच करें कि क्या imp.json फ़ाइल मौजूद है।</p>');
-    }
-  };
-}
-
-// --- Shortcut Keys Button Handler (shortcuts.json) ---
-const shortcutBtn = document.getElementById('shortcutBtn');
-if (shortcutBtn) {
-  shortcutBtn.onclick = async () => {
-    try {
-      const response = await fetch('shortcuts.json');
-      if (!response.ok) throw new Error('shortcuts.json not found');
-      const data = await response.json();
-      
-      let htmlContent = '<div class="shortcut-container" style="display:flex;flex-direction:column;gap:16px;">';
-      if (Array.isArray(data)) {
-        data.forEach(group => {
-          htmlContent += `<div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:14px; padding:14px;">
-            <h3 style="margin:0 0 10px 0; color:var(--accent); font-family:var(--font-heading); font-size:15px; border-bottom:1px solid var(--line); padding-bottom:6px;">⌨️ ${esc(group.category)}</h3>
-            <div style="display:flex; flex-direction:column; gap:8px;">`;
-          
-          group.keys.forEach(item => {
-            htmlContent += `<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.2); padding:8px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
-              <code style="background:var(--soft); color:var(--accent); padding:4px 8px; border-radius:6px; font-weight:bold; font-family:monospace; border:1px solid var(--line);">${esc(item.key)}</code>
-              <span style="font-size:13px; color:var(--muted); text-align:right; max-width:60%;">${esc(item.desc)}</span>
-            </div>`;
-          });
-
-          htmlContent += `</div></div>`;
-        });
-      } else {
-        htmlContent += `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-      }
-      htmlContent += '</div>';
-
-      panel('⌨️ Master Shortcut Keys', htmlContent);
-    } catch (error) {
-      panel('⌨️ Master Shortcut Keys', '<p style="color:#ef4444;">shortcuts.json फ़ाइल लोड करने में विफल रही। कृपया जाँच करें कि क्या यह फ़ाइल मौजूद है।</p>');
-    }
-  };
-}
-
-$('#menuBtn').onclick=()=>$('#menu').classList.toggle('hidden');
-$('#menu').onclick=e=>{
-  let a=e.target.dataset.action;
-  if(!a)return;
-  $('#menu').classList.add('hidden');
-  if(a==='about'){openCustomAppInfoDiv();return;}
-  if(a==='developer')panel('Developer Info','<h3>kaushalji</h3><p>Full Stack Web Developer & Tech Educator</p><p><a href="https://www.youtube.com/@computer-skills9129">YouTube</a> · <a href="https://www.instagram.com/kaushalji_boss.01">Instagram</a></p>');
-  if(a==='install')install();
-  if(a==='share')share();
-};
-
 $('#themeBtn').onclick=()=>{
   document.body.classList.toggle('dark');
   localStorage.theme=document.body.classList.contains('dark')?'dark':'light';
 };
-
 $('#closeImage').onclick=()=>$('#imageModal').classList.add('hidden');
 $('#imageModal').onclick=e=>{if(e.target.id==='imageModal')$('#imageModal').classList.add('hidden')};
 $('#closePanel').onclick=()=>$('#panel').classList.add('hidden');
 $('#search').oninput=render;
 $('#continueBtn').onclick=()=>document.querySelector('#moduleTabs').scrollIntoView({behavior:'smooth'});
 $('#quizTop').onclick=$('#openQuiz').onclick=openQuiz;
-
 $('#flashBtn').onclick=()=>{
   let m=DATA.modules[active],items=m.units.flatMap(u=>u.topics).slice(0,10);
   panel('Quick Revision',items.map(t=>`<p><b>${esc(t.title)}</b><br><span class="muted">${esc(t.note)}</span></p>`).join(''));
 };
-
 $('#progressBtn').onclick=()=>panel('My Progress',`<h2>${Object.values(done).filter(Boolean).length} topics completed</h2><p>किसी topic के पास ○ पर टैप करके उसे पूरा mark करें।</p>`);
 $('#syllabusBtn').onclick=()=>window.open('https://nielit.gov.in/sites/default/files/headquarter/pdf/20220905_5_1_revised_O_Level_IT.pdf','_blank');
 $('#installHero').onclick=install;
-
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e});
-
 async function install(){
   if(deferredPrompt){
     deferredPrompt.prompt();
     await deferredPrompt.userChoice;
     deferredPrompt=null;
   } else {
-    panel('Install App','<p>Android Chrome में ऊपर ⋮ मेन्यू खोलें और <b>Install app</b> या <b>Add to Home screen</b> चुनें। पहले साइट को localhost या HTTPS hosting पर खोलें।</p>');
+    panel('Install App','<p>Android Chrome में ऊपर मेन्यू खोलें और <b>Install app</b> या <b>Add to Home screen</b> चुनें। पहले साइट को localhost या HTTPS hosting पर खोलें।</p>');
   }
 }
-
 async function share(){
   const shareData={title:DATA.title||'NIELIT O Level Portal',text:'NIELIT O Level Master Portal',url:'https://harshitkaushal9129-bit.github.io/full-forms-for-o-level/'};
   if(navigator.share){
@@ -237,9 +142,7 @@ async function share(){
     panel('Share Portal','<p>Portal link copy कर ली गई है!</p>');
   }
 }
-
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
-
 let practicalCategory="All";
 (function createPracticalButton(){
   const tabs=document.getElementById("moduleTabs");
@@ -252,7 +155,6 @@ let practicalCategory="All";
   tabs.parentNode.insertBefore(btn,tabs.nextSibling);
   btn.onclick=openPracticalLab;
 })();
-
 function openPracticalLab(){
   if(!PRACTICAL_DATA||!PRACTICAL_DATA.practicals){
     panel("Practical Lab","<p><b>new.json</b> फ़ाइल लोड नहीं हो पाई है या उसमें practicals सेक्शन नहीं है।</p>");
@@ -261,7 +163,6 @@ function openPracticalLab(){
   practicalCategory="All";
   renderPracticalLab();
 }
-
 function renderPracticalLab(){
   const practicalsList=PRACTICAL_DATA.practicals||[];
   const categories=["All",...practicalsList.map(p=>p.category)];
@@ -317,18 +218,15 @@ function renderPracticalLab(){
     };
   });
 }
-
-// --- Safe Splash Screen Handler ---
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   const splash = document.getElementById('futuristicSplash');
   if(splash) {
     setTimeout(() => {
       splash.classList.add('fade-out');
-      setTimeout(() => splash.remove(), 500);
-    }, 1500);
+      setTimeout(() => splash.remove(), 700);
+    }, 2800);
   }
 });
-
 function openCustomAppInfoDiv() {
   const modal = $('#appInfoDiv');
   if(modal) {
@@ -336,12 +234,10 @@ function openCustomAppInfoDiv() {
     updateLiveMetrics();
   }
 }
-
 const closeBtn = $('#closeAppInfo');
 if(closeBtn) {
   closeBtn.onclick = () => { $('#appInfoDiv').classList.add('hidden'); };
 }
-
 const appModal = $('#appInfoDiv');
 if(appModal) {
   appModal.onclick = (e) => {
@@ -350,7 +246,6 @@ if(appModal) {
     }
   };
 }
-
 function updateLiveMetrics() {
   const now = new Date();
   const clockEl = $('#liveClock');
@@ -373,10 +268,27 @@ function updateLiveMetrics() {
     if (batEl) batEl.textContent = 'N/A';
   }
 }
-
 setInterval(() => {
   const appInfoModal = $('#appInfoDiv');
   if (appInfoModal && !appInfoModal.classList.contains('hidden')) {
     updateLiveMetrics();
   }
 }, 1000);
+$('#navPractical').onclick = () => { if(typeof openPracticalLab==='function') openPracticalLab(); };
+$('#navTheory').onclick = () => { document.querySelector('#moduleTabs').scrollIntoView({behavior:'smooth'}); };
+$('#navShortcuts').onclick = () => {
+  panel('⌨️ Keyboard & App Shortcuts', '<p><b>Ctrl + F</b>: Search topics</p><p><b>Theme Toggle (☾)</b>: Switch Dark/Light Mode</p><p><b>Practice Quiz</b>: Test your knowledge</p>');
+};
+$('#navMenuModal').onclick = () => { $('#customMenuModal').classList.remove('hidden'); };
+$('#closeCustomMenu').onclick = () => { $('#customMenuModal').classList.add('hidden'); };
+$('#customMenuModal').onclick = (e) => { if(e.target.id==='customMenuModal') $('#customMenuModal').classList.add('hidden'); };
+document.querySelectorAll('.menu-action-btn').forEach(btn => {
+  btn.onclick = (e) => {
+    let a = e.target.dataset.action;
+    $('#customMenuModal').classList.add('hidden');
+    if(a==='about') openCustomAppInfoDiv();
+    if(a==='developer') panel('Developer Info','<h3>kaushalji</h3><p>Full Stack Web Developer & Tech Educator</p><p><a href="https://www.youtube.com/@computer-skills9129">YouTube</a> · <a href="https://www.instagram.com/kaushalji_boss.01">Instagram</a></p>');
+    if(a==='install') install();
+    if(a==='share') share();
+  };
+});
