@@ -106,6 +106,61 @@ function panel(title,html){
   $('#panelBody').innerHTML=html;
   $('#panel').classList.remove('hidden');
 }
+
+// Important Points Handler
+const importantBtn = document.getElementById('importantBtn');
+if (importantBtn) {
+  importantBtn.onclick = async () => {
+    try {
+      const response = await fetch('imp.json');
+      if (!response.ok) throw new Error('imp.json not found');
+      const data = await response.json();
+      let htmlContent = '<div style="display:flex;flex-direction:column;gap:14px;">';
+      if (Array.isArray(data)) {
+        data.forEach(item => {
+          htmlContent += `<div style="padding:16px; background:rgba(255,255,255,0.03); border:1px solid var(--line); border-radius:14px;"><h3 style="margin:0 0 8px 0; color:var(--accent); font-size:16px;">${esc(item.title || 'Important Topic')}</h3><div style="font-size:14px; color:var(--muted);">${esc(item.description || item)}</div></div>`;
+        });
+      }
+      htmlContent += '</div>';
+      panel('⭐ Important Points', htmlContent);
+    } catch (error) {
+      panel('⭐ Important Points', '<p style="color:#ef4444;">imp.json फ़ाइल उपलब्ध नहीं है।</p>');
+    }
+  };
+}
+
+// Shortcut Keys Handler (Safe check agar file na ho)
+const shortcutBtn = document.getElementById('shortcutBtn');
+if (shortcutBtn) {
+  shortcutBtn.onclick = async () => {
+    try {
+      const response = await fetch('shortcuts.json');
+      if (!response.ok) throw new Error('shortcuts.json not found');
+      const data = await response.json();
+      let htmlContent = '<div style="display:flex;flex-direction:column;gap:16px;">';
+      if (Array.isArray(data)) {
+        data.forEach(group => {
+          htmlContent += `<div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:14px; padding:14px;"><h3 style="margin:0 0 10px 0; color:var(--accent); font-size:15px;">⌨️ ${esc(group.category)}</h3>`;
+          group.keys.forEach(item => {
+            htmlContent += `<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.2); padding:8px 12px; border-radius:8px; margin-top:6px;"><code style="color:var(--accent);">${esc(item.key)}</code><span style="font-size:13px; color:var(--muted);">${esc(item.desc)}</span></div>`;
+          });
+          htmlContent += `</div>`;
+        });
+      }
+      htmlContent += '</div>';
+      panel('⌨️ Master Shortcut Keys', htmlContent);
+    } catch (error) {
+      panel('⌨️ Master Shortcut Keys', '<p style="color:#e2e8f0;"><b>Common Shortcuts:</b><br>• Ctrl + F: Search topics<br>• Theme Toggle: Click moon icon<br><br><span style="color:#94a3b8;font-size:12px;">(shortcuts.json file missing hai, aap chahein toh ise add kar sakte hain)</span></p>');
+    }
+  };
+}
+
+// 3 Dots Menu Button & Quick Nav Fix
+const menuBtn = $('#menuBtn');
+if(menuBtn) {
+  menuBtn.onclick = () => { $('#customMenuModal').classList.toggle('hidden'); };
+}
+
 $('#themeBtn').onclick=()=>{
   document.body.classList.toggle('dark');
   localStorage.theme=document.body.classList.contains('dark')?'dark':'light';
@@ -130,19 +185,15 @@ async function install(){
     await deferredPrompt.userChoice;
     deferredPrompt=null;
   } else {
-    panel('Install App','<p>Android Chrome में ऊपर मेन्यू खोलें और <b>Install app</b> या <b>Add to Home screen</b> चुनें। पहले साइट को localhost या HTTPS hosting पर खोलें।</p>');
+    panel('Install App','<p>Android Chrome में ऊपर menu खोलें और <b>Install app</b> चुनें।</p>');
   }
 }
 async function share(){
-  const shareData={title:DATA.title||'NIELIT O Level Portal',text:'NIELIT O Level Master Portal',url:'https://harshitkaushal9129-bit.github.io/full-forms-for-o-level/'};
-  if(navigator.share){
-    try{await navigator.share(shareData)}catch(e){}
-  } else {
-    navigator.clipboard?.writeText('https://harshitkaushal9129-bit.github.io/full-forms-for-o-level/');
-    panel('Share Portal','<p>Portal link copy कर ली गई है!</p>');
-  }
+  const shareData={title:'NIELIT O Level Portal',text:'NIELIT O Level Master Portal',url:location.href};
+  if(navigator.share){try{await navigator.share(shareData)}catch(e){}}else{navigator.clipboard?.writeText(location.href);panel('Share Portal','<p>Link copied!</p>');}
 }
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+
 let practicalCategory="All";
 (function createPracticalButton(){
   const tabs=document.getElementById("moduleTabs");
@@ -218,6 +269,7 @@ function renderPracticalLab(){
     };
   });
 }
+
 window.addEventListener('load', () => {
   const splash = document.getElementById('futuristicSplash');
   if(splash) {
@@ -274,14 +326,17 @@ setInterval(() => {
     updateLiveMetrics();
   }
 }, 1000);
+
 $('#navPractical').onclick = () => { if(typeof openPracticalLab==='function') openPracticalLab(); };
 $('#navTheory').onclick = () => { document.querySelector('#moduleTabs').scrollIntoView({behavior:'smooth'}); };
 $('#navShortcuts').onclick = () => {
-  panel('⌨️ Keyboard & App Shortcuts', '<p><b>Ctrl + F</b>: Search topics</p><p><b>Theme Toggle (☾)</b>: Switch Dark/Light Mode</p><p><b>Practice Quiz</b>: Test your knowledge</p>');
+  if(typeof shortcutBtn !== 'undefined' && shortcutBtn) shortcutBtn.click();
+  else panel('⌨️ Keyboard Shortcuts', '<p>• Ctrl + F: Search topics<br>• Theme Toggle: Click moon icon</p>');
 };
 $('#navMenuModal').onclick = () => { $('#customMenuModal').classList.remove('hidden'); };
 $('#closeCustomMenu').onclick = () => { $('#customMenuModal').classList.add('hidden'); };
 $('#customMenuModal').onclick = (e) => { if(e.target.id==='customMenuModal') $('#customMenuModal').classList.add('hidden'); };
+
 document.querySelectorAll('.menu-action-btn').forEach(btn => {
   btn.onclick = (e) => {
     let a = e.target.dataset.action;
