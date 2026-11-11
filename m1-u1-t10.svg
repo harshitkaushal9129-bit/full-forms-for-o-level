@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320" role="img" aria-labelledby="title desc">
+<title id="title">Storage: HDD, SSD, Optical और Flash</title><desc id="desc">Computer Fundamentals — द्वितीयक संग्रहण उपकरणों का उपयोग दीर्घकालिक और सुरक्षित डेटा स्टोरेज के लिए किया जाता है। हार्ड डिस्क ड्राइव चुंबकीय प्लेटों और घूमने वाले स्पिंडल पर आधारित पारंपरिक स्टोरेज डिवाइस है। सॉलिड स्टेट ड्राइव फ्लैश मेमोरी चिप्स पर आधारित आधुनिक</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4f46e5"/><stop offset="1" stop-color="#0b1530"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#000" flood-opacity=".28"/></filter>
+</defs>
+<rect width="480" height="320" rx="24" fill="url(#bg)"/>
+<circle cx="430" cy="45" r="75" fill="#fff" opacity=".06"/><circle cx="30" cy="285" r="95" fill="#fff" opacity=".05"/>
+<rect x="18" y="14" width="444" height="292" rx="20" fill="#071426" opacity=".28" stroke="#ffffff" stroke-opacity=".18"/>
+<text x="30" y="35" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff">Storage: HDD, SSD, Optical और Flash</text>
+<rect x="30" y="77" width="420" height="174" rx="18" fill="#ffffff" opacity=".08" stroke="#ffffff" stroke-opacity=".22"/>
+<g filter="url(#shadow)"><g stroke="#eaf2ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <rect x="105" y="70" width="270" height="180" rx="18" fill="#122747" stroke="#4f46e5"/>
+        <path d="M125 105h230M125 145h230M125 185h230" stroke="#4f46e5" stroke-width="3" opacity=".7"/>
+        <g fill="#4f46e5" stroke="none"><rect x="140" y="85" width="35" height="12" rx="4"/><rect x="195" y="85" width="35" height="12" rx="4"/><rect x="250" y="85" width="35" height="12" rx="4"/><rect x="305" y="85" width="35" height="12" rx="4"/></g>
+        <path d="M145 120v10m40-10v10m40-10v10m40-10v10m40-10v10m40-10v10M145 160v10m40-10v10m40-10v10m40-10v10m40-10v10m40-10v10" stroke-width="5"/>
+        <path d="M145 210h190" stroke-width="8"/>
+        </g></g>
+<rect x="30" y="265" width="420" height="25" rx="9" fill="#061326" opacity=".55"/>
+<text x="42" y="282" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#dcecff">M1-R5.1  •  MEMORY</text>
+<text x="438" y="282" text-anchor="end" font-family="Arial,sans-serif" font-size="10" fill="#dcecff">m1-u1-t10</text>
+</svg>

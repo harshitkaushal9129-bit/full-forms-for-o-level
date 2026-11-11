@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320" role="img" aria-labelledby="title desc">
+<title id="title">Input devices: Keyboard, Mouse, Scanner, OMR, OCR, MICR</title><desc id="desc">Computer Fundamentals — इनपुट डिवाइस वे हार्डवेयर उपकरण हैं जिनके माध्यम से यूजर डेटा और निर्देश कंप्यूटर में दर्ज करता है। कीबोर्ड सबसे आम टेक्स्ट इनपुट डिवाइस है जिसमें विभिन्न प्रकार की कुंजियाँ होती हैं। माउस एक पॉइंटिंग डिवाइस है जो स्क्रीन पर कर्सर की स्थिति</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4f46e5"/><stop offset="1" stop-color="#0b1530"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#000" flood-opacity=".28"/></filter>
+</defs>
+<rect width="480" height="320" rx="24" fill="url(#bg)"/>
+<circle cx="430" cy="45" r="75" fill="#fff" opacity=".06"/><circle cx="30" cy="285" r="95" fill="#fff" opacity=".05"/>
+<rect x="18" y="14" width="444" height="292" rx="20" fill="#071426" opacity=".28" stroke="#ffffff" stroke-opacity=".18"/>
+<text x="30" y="35" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff">Input devices: Keyboard, Mouse,</text><text x="30" y="58" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#ffffff">Scanner, OMR, OCR, MICR</text>
+<rect x="30" y="77" width="420" height="174" rx="18" fill="#ffffff" opacity=".08" stroke="#ffffff" stroke-opacity=".22"/>
+<g filter="url(#shadow)"><g stroke="#eaf2ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <rect x="85" y="95" width="215" height="125" rx="15" fill="#142b4c" stroke="#4f46e5"/>
+        <rect x="105" y="115" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="127" y="115" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="149" y="115" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="171" y="115" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="193" y="115" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="215" y="115" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="237" y="115" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="259" y="115" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="105" y="138" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="127" y="138" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="149" y="138" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="171" y="138" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="193" y="138" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="215" y="138" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="237" y="138" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="259" y="138" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="105" y="161" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="127" y="161" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="149" y="161" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="171" y="161" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="193" y="161" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="215" y="161" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="237" y="161" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/><rect x="259" y="161" width="15" height="13" rx="3" fill="#4f46e5" stroke="none"/>
+        <path d="M330 95c35 0 55 27 55 60v25c0 35-20 55-55 55s-55-20-55-55v-25c0-33 20-60 55-60z" fill="#142b4c" stroke="#4f46e5"/>
+        <path d="M330 100v48m-15-48h30" stroke-width="5"/>
+        </g></g>
+<rect x="30" y="265" width="420" height="25" rx="9" fill="#061326" opacity=".55"/>
+<text x="42" y="282" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#dcecff">M1-R5.1  •  INPUT</text>
+<text x="438" y="282" text-anchor="end" font-family="Arial,sans-serif" font-size="10" fill="#dcecff">m1-u1-t6</text>
+</svg>
