@@ -111,7 +111,7 @@ $('#menu').onclick=e=>{
   let a=e.target.dataset.action;
   if(!a)return;
   $('#menu').classList.add('hidden');
-  if(a==='about')panel('App Info','<p>NIELIT O Level Master Portal</p><p>Revision 5.1 study companion with topic notes, SVG illustrations, quiz and offline install support.</p><p class="muted">Not affiliated with NIELIT.</p>');
+  if(a==='about'){openCustomAppInfoDiv();return;}
   if(a==='developer')panel('Developer Info','<h3>kaushalji</h3><p>Full Stack Web Developer & Tech Educator</p><p><a href="https://www.youtube.com/@computer-skills9129">YouTube</a> · <a href="https://www.instagram.com/kaushalji_boss.01">Instagram</a></p>');
   if(a==='install')install();
   if(a==='share')share();
@@ -153,7 +153,6 @@ async function share(){
   }
 }
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
-
 let practicalCategory="All";
 (function createPracticalButton(){
   const tabs=document.getElementById("moduleTabs");
@@ -179,14 +178,11 @@ function renderPracticalLab(){
   const categories=["All",...practicalsList.map(p=>p.category)];
   const items=practicalsList.filter(p=>practicalCategory==="All"||p.category===practicalCategory).flatMap(p=>p.items.map(item=>({...item,category:p.category})));
   const categoryHTML=categories.map(cat=>`<button class="practical-category" data-category="${esc(cat)}" style="padding:8px 14px;margin:4px;border:0;border-radius:10px;background:${cat===practicalCategory?"#4f46e5":"#334155"};color:white;cursor:pointer;">${esc(cat)}</button>`).join("");
-  
   const cards=items.map((item,index)=>{
-    // यहाँ HTML/CSS कोड को iframe के अंदर लाइव रेंडर करने के लिए srcdoc का उपयोग किया गया है
     const isCodeLang = item.language === "HTML5" || item.language === "CSS3";
     const outputView = isCodeLang 
       ? `<iframe srcdoc="${esc(item.code)}" style="width:100%;height:100px;background:#fff;border:1px solid #ccc;border-radius:6px;" sandbox="allow-scripts"></iframe>`
       : `<pre style="margin:0;white-space:pre-wrap;font-family:monospace;">${esc(item.output||item.code)}</pre>`;
-
     return `<article class="practical-card" style="background:var(--card,#1e293b);border:1px solid var(--line,#334155);border-radius:15px;padding:16px;margin:14px 0;color:#f8fafc;">
       <div style="display:flex;justify-content:space-between;gap:8px">
         <span style="color:#818cf8;font-weight:bold">${esc(item.category)}</span>
@@ -205,9 +201,7 @@ function renderPracticalLab(){
       </div>
     </article>`;
   }).join("");
-
   panel("🧪 "+esc(PRACTICAL_DATA.title||"O Level Practical Lab"),`<div style="margin-bottom:18px"><p>HTML, CSS, JavaScript, Python और IoT के Practical Questions और उनके Live Outputs.</p><div style="margin-top:8px;">${categoryHTML}</div><p style="margin-top:10px;"><b>${items.length}</b> Practical Questions Found</p></div><div>${cards||"<p>No practicals found.</p>"}</div>`);
-
   document.querySelectorAll("[data-category]").forEach(button=>{
     button.onclick=()=>{
       practicalCategory=button.dataset.category;
@@ -234,12 +228,6 @@ function renderPracticalLab(){
     };
   });
 }
-
-
-/* =========================================================
-   EXTENDED APP INFO, SYSTEM METRICS & FUTURISTIC ANIMATION
-   ========================================================= */
-// 1. Futuristic Intro Splash Animation Handling
 window.addEventListener('load', () => {
   const splash = document.getElementById('futuristicSplash');
   if(splash) {
@@ -249,18 +237,6 @@ window.addEventListener('load', () => {
     }, 2800);
   }
 });
-// 2. Override 'App Info' Action to Open Custom Div Modal
-const origMenuClick = $('#menu').onclick;
-$('#menu').onclick = (e) => {
-  let a = e.target.dataset.action;
-  if (a === 'about') {
-    $('#menu').classList.add('hidden');
-    openCustomAppInfoDiv();
-    return;
-  }
-  if (typeof origMenuClick === 'function') origMenuClick(e);
-};
-// Open Custom App Info Div Modal
 function openCustomAppInfoDiv() {
   const modal = $('#appInfoDiv');
   if(modal) {
@@ -268,25 +244,24 @@ function openCustomAppInfoDiv() {
     updateLiveMetrics();
   }
 }
-// Close Button Listener for App Info Div
-$('#closeAppInfo').onclick = () => {
-  $('#appInfoDiv').classList.add('hidden');
-};
-// Close when clicking outside of div modal content
-$('#appInfoDiv').onclick = (e) => {
-  if (e.target.id === 'appInfoDiv') {
-    $('#appInfoDiv').classList.add('hidden');
-  }
-};
-// 3. Realtime Clock, Date & Battery API Updates
+const closeBtn = $('#closeAppInfo');
+if(closeBtn) {
+  closeBtn.onclick = () => { $('#appInfoDiv').classList.add('hidden'); };
+}
+const appModal = $('#appInfoDiv');
+if(appModal) {
+  appModal.onclick = (e) => {
+    if (e.target.id === 'appInfoDiv') {
+      $('#appInfoDiv').classList.add('hidden');
+    }
+  };
+}
 function updateLiveMetrics() {
-  // Clock & Date
   const now = new Date();
   const clockEl = $('#liveClock');
   const dateEl = $('#liveDate');
   if (clockEl) clockEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
   if (dateEl) dateEl.textContent = now.toLocaleDateString([], { day: '2-digit', month: 'short', year: 'numeric' });
-  // Battery Status API
   const batEl = $('#batteryStatus');
   if ('getBattery' in navigator) {
     navigator.getBattery().then(battery => {
@@ -303,11 +278,9 @@ function updateLiveMetrics() {
     if (batEl) batEl.textContent = 'N/A';
   }
 }
-// Update clock every second
 setInterval(() => {
   const appInfoModal = $('#appInfoDiv');
   if (appInfoModal && !appInfoModal.classList.contains('hidden')) {
     updateLiveMetrics();
   }
 }, 1000);
-
