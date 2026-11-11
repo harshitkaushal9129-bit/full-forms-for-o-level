@@ -133,7 +133,7 @@ if (importantBtn) {
   };
 }
 
-// Master Shortcut Keys Handler (Updated to use pre-fetched SHORTCUTS_DATA safely)
+// Master Shortcut Keys Handler
 function openShortcutsModal() {
   if (!SHORTCUTS_DATA || SHORTCUTS_DATA.length === 0) {
     panel('⌨️ Master Shortcut Keys', '<p style="color:#ef4444;">shortcuts.json लोड नहीं हो पाई है या खाली है।</p>');
@@ -280,6 +280,8 @@ window.addEventListener('load', () => {
     }, 2800);
   }
 });
+
+// App Info Modal Handlers
 function openCustomAppInfoDiv() {
   const modal = $('#appInfoDiv');
   if(modal) {
@@ -299,6 +301,27 @@ if(appModal) {
     }
   };
 }
+
+// Developer Info Modal Handlers (App Info ki tarah)
+function openCustomDeveloperInfoDiv() {
+  const modal = $('#developerInfoDiv');
+  if(modal) {
+    modal.classList.remove('hidden');
+  }
+}
+const closeDevBtn = $('#closeDeveloperInfo');
+if(closeDevBtn) {
+  closeDevBtn.onclick = () => { $('#developerInfoDiv').classList.add('hidden'); };
+}
+const devModal = $('#developerInfoDiv');
+if(devModal) {
+  devModal.onclick = (e) => {
+    if (e.target.id === 'developerInfoDiv') {
+      $('#developerInfoDiv').classList.add('hidden');
+    }
+  };
+}
+
 function updateLiveMetrics() {
   const now = new Date();
   const clockEl = $('#liveClock');
@@ -340,7 +363,7 @@ document.querySelectorAll('.menu-action-btn').forEach(btn => {
     let a = e.target.dataset.action;
     $('#customMenuModal').classList.add('hidden');
     if(a==='about') openCustomAppInfoDiv();
-    if(a==='developer') panel('Developer Info','<h3>kaushalji</h3><p>Full Stack Web Developer & Tech Educator</p><p><a href="https://www.youtube.com/@computer-skills9129">YouTube</a> · <a href="https://www.instagram.com/kaushalji_boss.01">Instagram</a></p>');
+    if(a==='developer') openCustomDeveloperInfoDiv(); // Yahan Developer Info wala div open hoga
     if(a==='install') install();
     if(a==='share') share();
   };
