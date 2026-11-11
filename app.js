@@ -1,8 +1,12 @@
-let DATA={},PRACTICAL_DATA={},active=0,deferredPrompt=null,done=JSON.parse(localStorage.getItem('oDone')||'{}');
+let DATA={}, PRACTICAL_DATA={}, SHORTCUTS_DATA=[], active=0, deferredPrompt=null, done=JSON.parse(localStorage.getItem('oDone')||'{}');
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+// सभी एक्सटर्नल फाइलों को सही से लोड किया गया है
 fetch('data.json').then(r=>r.json()).then(d=>{DATA=d;init()});
 fetch('new.json').then(r=>r.json()).then(d=>{PRACTICAL_DATA=d;});
+fetch('shortcuts.json').then(r=>r.json()).then(d=>{SHORTCUTS_DATA=d;}).catch(e=>console.log('shortcuts.json load error:', e));
+
 function init(){
   $('#moduleCount').textContent=DATA.modules.length;
   $('#unitCount').textContent=DATA.modules.reduce((a,m)=>a+m.units.length,0);
@@ -129,30 +133,27 @@ if (importantBtn) {
   };
 }
 
-// Shortcut Keys Handler (Safe check agar file na ho)
+// Master Shortcut Keys Handler (Updated to use pre-fetched SHORTCUTS_DATA safely)
+function openShortcutsModal() {
+  if (!SHORTCUTS_DATA || SHORTCUTS_DATA.length === 0) {
+    panel('⌨️ Master Shortcut Keys', '<p style="color:#ef4444;">shortcuts.json लोड नहीं हो पाई है या खाली है।</p>');
+    return;
+  }
+  let htmlContent = '<div style="display:flex;flex-direction:column;gap:16px;">';
+  SHORTCUTS_DATA.forEach(group => {
+    htmlContent += `<div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:14px; padding:14px;"><h3 style="margin:0 0 10px 0; color:var(--accent); font-size:15px;">⌨️ ${esc(group.category)}</h3>`;
+    group.keys.forEach(item => {
+      htmlContent += `<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.2); padding:8px 12px; border-radius:8px; margin-top:6px;"><code style="color:var(--accent);">${esc(item.key)}</code><span style="font-size:13px; color:var(--muted);">${esc(item.desc)}</span></div>`;
+    });
+    htmlContent += `</div>`;
+  });
+  htmlContent += '</div>';
+  panel('⌨️ Master Shortcut Keys', htmlContent);
+}
+
 const shortcutBtn = document.getElementById('shortcutBtn');
 if (shortcutBtn) {
-  shortcutBtn.onclick = async () => {
-    try {
-      const response = await fetch('shortcuts.json');
-      if (!response.ok) throw new Error('shortcuts.json not found');
-      const data = await response.json();
-      let htmlContent = '<div style="display:flex;flex-direction:column;gap:16px;">';
-      if (Array.isArray(data)) {
-        data.forEach(group => {
-          htmlContent += `<div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:14px; padding:14px;"><h3 style="margin:0 0 10px 0; color:var(--accent); font-size:15px;">⌨️ ${esc(group.category)}</h3>`;
-          group.keys.forEach(item => {
-            htmlContent += `<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.2); padding:8px 12px; border-radius:8px; margin-top:6px;"><code style="color:var(--accent);">${esc(item.key)}</code><span style="font-size:13px; color:var(--muted);">${esc(item.desc)}</span></div>`;
-          });
-          htmlContent += `</div>`;
-        });
-      }
-      htmlContent += '</div>';
-      panel('⌨️ Master Shortcut Keys', htmlContent);
-    } catch (error) {
-      panel('⌨️ Master Shortcut Keys', '<p style="color:#e2e8f0;"><b>Common Shortcuts:</b><br>• Ctrl + F: Search topics<br>• Theme Toggle: Click moon icon<br><br><span style="color:#94a3b8;font-size:12px;">(shortcuts.json file missing hai, aap chahein toh ise add kar sakte hain)</span></p>');
-    }
-  };
+  shortcutBtn.onclick = openShortcutsModal;
 }
 
 // 3 Dots Menu Button & Quick Nav Fix
@@ -329,10 +330,7 @@ setInterval(() => {
 
 $('#navPractical').onclick = () => { if(typeof openPracticalLab==='function') openPracticalLab(); };
 $('#navTheory').onclick = () => { document.querySelector('#moduleTabs').scrollIntoView({behavior:'smooth'}); };
-$('#navShortcuts').onclick = () => {
-  if(typeof shortcutBtn !== 'undefined' && shortcutBtn) shortcutBtn.click();
-  else panel('⌨️ Keyboard Shortcuts', '<p>• Ctrl + F: Search topics<br>• Theme Toggle: Click moon icon</p>');
-};
+$('#navShortcuts').onclick = openShortcutsModal;
 $('#navMenuModal').onclick = () => { $('#customMenuModal').classList.remove('hidden'); };
 $('#closeCustomMenu').onclick = () => { $('#customMenuModal').classList.add('hidden'); };
 $('#customMenuModal').onclick = (e) => { if(e.target.id==='customMenuModal') $('#customMenuModal').classList.add('hidden'); };
