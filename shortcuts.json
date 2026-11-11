@@ -1,0 +1,91 @@
+[
+  {
+    "category": "LibreOffice Calc (स्प्रेडशीट) - All Shortcuts",
+    "keys": [
+      {"key": "Ctrl + Home", "desc": "डॉक्यूमेंट या पहली सेल (A1) पर जाने के लिए"},
+      {"key": "Ctrl + End", "desc": "डेटा की अंतिम एक्टिव सेल पर जाने के लिए"},
+      {"key": "F2", "desc": "एक्टिव सेल (Cell) को एडिट करने के लिए"},
+      {"key": "F4", "desc": "सेल एड्रेस को Absolute/Relative ($A$1) में बदलने के लिए"},
+      {"key": "F11", "desc": "Styles and Formatting विंडो खोलने के लिए"},
+      {"key": "Ctrl + ;", "desc": "वर्तमान दिनांक (Current Date) डालने के लिए"},
+      {"key": "Ctrl + Shift + ;", "desc": "वर्तमान समय (Current Time) डालने के लिए"},
+      {"key": "Ctrl + Shift + +", "desc": "नई सेल या रो/कॉलम इंसर्ट करने के लिए"},
+      {"key": "Ctrl + -", "desc": "चयनित सेल या रो/कॉलम डिलीट करने के लिए"},
+      {"key": "Ctrl + F2", "desc": "Function Wizard खोलने के लिए"},
+      {"key": "Ctrl + D", "desc": "नीचे की सेल में डेटा कॉपी (Fill Down) करने के लिए"},
+      {"key": "Ctrl + R", "desc": "दाएँ की सेल में डेटा कॉपी (Fill Right) करने के लिए"},
+      {"key": "Alt + Down Arrow", "desc": "ड्रॉप-डाउन लिस्ट या ऑटो-फिल्टर खोलने के लिए"},
+      {"key": "Ctrl + F12", "desc": "टेबल इन्सर्ट करने के लिए"}
+    ]
+  },
+  {
+    "category": "LibreOffice Writer (वर्ड प्रोसेसिंग) - All Shortcuts",
+    "keys": [
+      {"key": "Ctrl + N", "desc": "नया डॉक्यूमेंट (New Document) बनाने के लिए"},
+      {"key": "Ctrl + O", "desc": "पहले से सेव फाइल खोलने के लिए"},
+      {"key": "Ctrl + S", "desc": "डॉक्यूमेंट सेव करने के लिए"},
+      {"key": "Ctrl + Shift + S", "desc": "सेव ऐज (Save As) करने के लिए"},
+      {"key": "Ctrl + P", "desc": "डॉक्यूमेंट प्रिंट करने के लिए"},
+      {"key": "Ctrl + F", "desc": "डॉक्यूमेंट में टेक्स्ट खोजने (Find) के लिए"},
+      {"key": "Ctrl + H", "desc": "टेक्स्ट ढूंढकर बदलने (Find & Replace) के लिए"},
+      {"key": "Ctrl + K", "desc": "हाइपरलिंक (Hyperlink) जोड़ने के लिए"},
+      {"key": "Ctrl + Shift + V", "desc": "बिना फॉर्मेटिंग के पेस्ट (Paste Special) करने के लिए"},
+      {"key": "F7", "desc": "स्पेलिंग और ग्रामर (Spelling & Grammar) चेक करने के लिए"},
+      {"key": "Ctrl + F7", "desc": "थिसॉरस (Thesaurus / पर्यायवाची शब्द) खोलने के लिए"},
+      {"key": "Shift + F3", "desc": "टेक्स्ट केस बदलने (UPPERCASE, lowercase, Title Case) के लिए"},
+      {"key": "Ctrl + Shift + C", "desc": "फॉर्मेट पेंटर (Format Painter) कॉपी करने के लिए"},
+      {"key": "Ctrl + Shift + V", "desc": "फॉर्मेट पेंटर पेस्ट करने के लिए"},
+      {"key": "Ctrl + 1", "desc": "सिंगल लाइन स्पेसिंग (Single Line Spacing)"},
+      {"key": "Ctrl + 2", "desc": "डबल लाइन स्पेसिंग (Double Line Spacing)"},
+      {"key": "Ctrl + 5", "desc": "1.5 लाइन स्पेसिंग (1.5 Line Spacing)"},
+      {"key": "Ctrl + L / R / E / J", "desc": "लेफ्ट, राइट, सेंटर और जस्टिफ़ाई एलाइनमेंट"}
+    ]
+  },
+  {
+    "category": "LibreOffice Impress (प्रेजेंटेशन) - All Shortcuts",
+    "keys": [
+      {"key": "F5", "desc": "शुरुआत से स्लाइड शो (Start Slide Show) करने के लिए"},
+      {"key": "Shift + F5", "desc": "वर्तमान स्लाइड से स्लाइड शो शुरू करने के लिए"},
+      {"key": "Esc", "desc": "स्लाइड शो को रोकने/बाहर आने के लिए"},
+      {"key": "Ctrl + M", "desc": "नया पेज/स्लाइड (New Slide) जोड़ने के लिए"},
+      {"key": "Ctrl + Shift + N", "desc": "नया प्रेजेंटेशन टेम्पलेट खोलने के लिए"},
+      {"key": "B / W", "desc": "स्लाइड शो के दौरान स्क्रीन को पूरी तरह काला (Black) या सफेद (White) करने के लिए"},
+      {"key": "N / Space / Right Arrow", "desc": "अगली स्लाइड या एनिमेशन पर जाने के लिए"},
+      {"key": "P / Backspace / Left Arrow", "desc": "पिछली स्लाइड पर जाने के लिए"}
+    ]
+  },
+  {
+    "category": "Windows & OS Shortcuts",
+    "keys": [
+      {"key": "Ctrl + Shift + Esc", "desc": "सीधे टास्क मैनेजर (Task Manager) खोलने के लिए"},
+      {"key": "Win + D", "desc": "सभी खुली हुई विंडो को मिनिमाइज करके डेस्कटॉप देखने के लिए"},
+      {"key": "Alt + Tab", "desc": "खुली हुई ऐप्स के बीच स्विच करने के लिए"},
+      {"key": "Win + L", "desc": "कंप्यूटर को लॉक (Lock Screen) करने के लिए"},
+      {"key": "Win + E", "desc": "फाइल एक्सप्लोरर (File Explorer) खोलने के लिए"},
+      {"key": "Win + R", "desc": "रन (Run Dialog Box) कमांड खोलने के लिए"},
+      {"key": "Win + I", "desc": "विंडोज सेटिंग्स (Settings) खोलने के लिए"},
+      {"key": "Win + S / Q", "desc": "सर्च बार खोलने के लिए"},
+      {"key": "Alt + F4", "desc": "सक्रिय विंडो या ऐप को बंद करने के लिए / शटडाउन मेनू"},
+      {"key": "Ctrl + Shift + N", "desc": "नया फोल्डर (New Folder) बनाने के लिए"},
+      {"key": "F2", "desc": "चुनी हुई फाइल या फोल्डर का नाम बदलने (Rename) के लिए"},
+      {"key": "Shift + Delete", "desc": "फाइल को रिसाइकिल बिन में डाले बिना स्थायी रूप से डिलीट करने के लिए"}
+    ]
+  },
+  {
+    "category": "Internet & Browser Shortcuts",
+    "keys": [
+      {"key": "Ctrl + T", "desc": "नई ब्राउज़र टैब (New Tab) खोलने के लिए"},
+      {"key": "Ctrl + Shift + T", "desc": "हाल ही में बंद की गई टैब को फिर से खोलने के लिए"},
+      {"key": "Ctrl + W / F4", "desc": "वर्तमान टैब को बंद करने के लिए"},
+      {"key": "Ctrl + Tab", "desc": "अगली खुली हुई टैब पर जाने के लिए"},
+      {"key": "Ctrl + Shift + Tab", "desc": "पिछली टैब पर जाने के लिए"},
+      {"key": "Ctrl + J", "desc": "डाउनलोड हिस्ट्री (Downloads) देखने के लिए"},
+      {"key": "Ctrl + H", "desc": "ब्राउज़र की पूरी हिस्ट्री (History) देखने के लिए"},
+      {"key": "Ctrl + Shift + Delete", "desc": "ब्राउज़र डेटा साफ़ करने (Clear Browsing Data) के लिए"},
+      {"key": "Ctrl + D", "desc": "करंट पेज को बुकमार्क (Bookmark) करने के लिए"},
+      {"key": "F5 / Ctrl + R", "desc": "पेज को रीफ्रेश (Refresh) करने के लिए"},
+      {"key": "Ctrl + F5", "desc": "हार्ड रीफ्रेश (Hard Refresh - कैशे हटाकर रीलोड)"},
+      {"key": "F11", "desc": "फुल स्क्रीन मोड (Full Screen Mode) ऑन/ऑफ करने के लिए"}
+    ]
+  }
+]
