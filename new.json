@@ -1,0 +1,660 @@
+{
+  "title": "NIELIT M2-R5 & M3-R5 Complete Practical Lab",
+  "practicals": [
+    {
+      "category": "HTML",
+      "items": [
+        {
+          "title": "Student Registration Form",
+          "language": "HTML5",
+          "question": "Create a student registration form.",
+          "code": "<form><h2>Registration Form</h2><label>Name:</label><input type=\"text\" required><br><label>Email:</label><input type=\"email\" required><br><label>Gender:</label><input type=\"radio\" name=\"gender\" value=\"Male\">Male <input type=\"radio\" name=\"gender\" value=\"Female\">Female<br><button type=\"submit\">Submit</button></form>",
+          "output": "Displays a student registration form with name, email, gender and submit button."
+        },
+        {
+          "title": "HTML Personal Profile",
+          "language": "HTML5",
+          "question": "Create a personal profile webpage.",
+          "code": "<h1>My Profile</h1><h2>Kaushalji</h2><p>I am a full-stack developer.</p><p>My Skills: HTML, CSS, JavaScript</p>",
+          "output": "Displays a personal profile with heading, introduction and skills."
+        },
+        {
+          "title": "HTML Ordered List",
+          "language": "HTML5",
+          "question": "Create an ordered list of programming languages.",
+          "code": "<h2>Programming Languages</h2><ol><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li></ol>",
+          "output": "Displays a numbered list of four programming languages."
+        },
+        {
+          "title": "HTML Unordered List",
+          "language": "HTML5",
+          "question": "Create an unordered list of computer subjects.",
+          "code": "<ul><li>Computer Fundamentals</li><li>Web Designing</li><li>Python</li><li>IoT</li></ul>",
+          "output": "Displays a bulleted list of computer subjects."
+        },
+        {
+          "title": "HTML Table Marksheet",
+          "language": "HTML5",
+          "question": "Create a student marksheet using an HTML table.",
+          "code": "<table border=\"1\"><tr><th>Name</th><th>HTML</th><th>CSS</th></tr><tr><td>Amit</td><td>85</td><td>90</td></tr><tr><td>Rahul</td><td>78</td><td>82</td></tr></table>",
+          "output": "Displays a student marksheet with names and subject marks."
+        },
+        {
+          "title": "HTML Image Tag",
+          "language": "HTML5",
+          "question": "Display an image on a webpage.",
+          "code": "<h2>My Image</h2><img src=\"photo.jpg\" alt=\"My Photo\" width=\"300\">",
+          "output": "Displays photo.jpg with a width of 300 pixels when available."
+        },
+        {
+          "title": "HTML Hyperlink",
+          "language": "HTML5",
+          "question": "Create a hyperlink to Google.",
+          "code": "<a href=\"https://www.google.com\" target=\"_blank\">Visit Google</a>",
+          "output": "Displays a clickable link that opens Google in a new tab."
+        },
+        {
+          "title": "HTML Audio Player",
+          "language": "HTML5",
+          "question": "Add an audio player to a webpage.",
+          "code": "<audio controls><source src=\"music.mp3\" type=\"audio/mpeg\">Your browser does not support audio.</audio>",
+          "output": "Displays an audio player with play and pause controls."
+        },
+        {
+          "title": "HTML Video Player",
+          "language": "HTML5",
+          "question": "Add a video player to a webpage.",
+          "code": "<video width=\"400\" controls><source src=\"video.mp4\" type=\"video/mp4\">Your browser does not support video.</video>",
+          "output": "Displays a video player with playback controls."
+        },
+        {
+          "title": "HTML Semantic Layout",
+          "language": "HTML5",
+          "question": "Create a webpage using semantic HTML elements.",
+          "code": "<header><h1>My Website</h1></header><nav><a href=\"#home\">Home</a> | <a href=\"#about\">About</a></nav><main><section><article><h2>Welcome</h2><p>HTML5 Semantic Layout</p></article></section></main><footer>Copyright 2026</footer>",
+          "output": "Displays a semantic webpage with header, navigation, main content and footer."
+        },
+        {
+          "title": "HTML Forms - Feedback Form",
+          "language": "HTML5",
+          "question": "Create a user feedback form with textarea.",
+          "code": "<form><h2>Feedback</h2><label>Message:</label><br><textarea rows=\"4\" cols=\"30\" placeholder=\"Enter feedback...\"></textarea><br><button type=\"submit\">Send</button></form>",
+          "output": "Displays a feedback form with a text area and submit button."
+        },
+        {
+          "title": "HTML Dropdown Menu",
+          "language": "HTML5",
+          "question": "Create a select dropdown list for course selection.",
+          "code": "<label>Select Course:</label><select><option>O Level</option><option>A Level</option><option>CCC</option></select>",
+          "output": "Displays a dropdown select box with options."
+        },
+        {
+          "title": "HTML Checkbox Options",
+          "language": "HTML5",
+          "question": "Create hobbies selection using checkboxes.",
+          "code": "<p>Hobbies:</p><input type=\"checkbox\"> Reading<br><input type=\"checkbox\"> Coding<br><input type=\"checkbox\"> Gaming",
+          "output": "Displays multiple checkbox options for hobbies."
+        },
+        {
+          "title": "HTML Description List",
+          "language": "HTML5",
+          "question": "Create a description list for computer terms.",
+          "code": "<dl><dt>CPU</dt><dd>Central Processing Unit</dd><dt>RAM</dt><dd>Random Access Memory</dd></dl>",
+          "output": "Displays terms and their descriptions in list format."
+        },
+        {
+          "title": "HTML Blockquote Example",
+          "language": "HTML5",
+          "question": "Create a blockquote for quotations.",
+          "code": "<blockquote cite=\"https://www.example.com\">Practice makes a person perfect in coding.</blockquote>",
+          "output": "Displays an indented blockquote section."
+        },
+        {
+          "title": "HTML Nested Lists",
+          "language": "HTML5",
+          "question": "Create a nested list of computer hardware and software.",
+          "code": "<ul><li>Hardware<ul><li>CPU</li><li>Monitor</li></ul></li><li>Software<ul><li>OS</li><li>App</li></ul></li></ul>",
+          "output": "Displays a nested bulleted list structure."
+        },
+        {
+          "title": "HTML Iframe Embed",
+          "language": "HTML5",
+          "question": "Embed another webpage using iframe.",
+          "code": "<iframe src=\"https://www.wikipedia.org\" width=\"100%\" height=\"300\"></iframe>",
+          "output": "Embeds Wikipedia inside an inline frame window."
+        },
+        {
+          "title": "HTML Meta Tags",
+          "language": "HTML5",
+          "question": "Define meta tags for character set and viewport.",
+          "code": "<meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+          "output": "Sets document encoding and mobile responsive scaling."
+        },
+        {
+          "title": "HTML Color Headings",
+          "language": "HTML5",
+          "question": "Create headings with inline style colors.",
+          "code": "<h1 style=\"color:blue;\">Blue Heading</h1><h2 style=\"color:red;\">Red Heading</h2>",
+          "output": "Displays headings styled with specific text colors."
+        },
+        {
+          "title": "HTML Contact Card",
+          "language": "HTML5",
+          "question": "Create a simple contact card using article and address.",
+          "code": "<article><h3>Kaushalji</h3><address>Email: contact@kaushalji.com<br>Location: India</address></article>",
+          "output": "Displays a formatted contact information card."
+        }
+      ]
+    },
+    {
+      "category": "CSS",
+      "items": [
+        {
+          "title": "CSS Background Color",
+          "language": "CSS3",
+          "question": "Apply background color to a webpage body.",
+          "code": "<style>body { background-color: #f0fdf4; font-family: sans-serif; }</style><h2>Green Background Page</h2>",
+          "output": "Changes the page background color to light green."
+        },
+        {
+          "title": "CSS Text Styling",
+          "language": "CSS3",
+          "question": "Style text with custom font size, weight, and color.",
+          "code": "<style>.styled-text { color: #2563eb; font-size: 24px; font-weight: bold; }</style><p class=\"styled-text\">Welcome to CSS Styling</p>",
+          "output": "Displays text in bold blue with 24px font size."
+        },
+        {
+          "title": "CSS Box Model",
+          "language": "CSS3",
+          "question": "Create a box with padding, margin, and border.",
+          "code": "<style>.box { background: #fee2e2; border: 2px solid #ef4444; padding: 20px; margin: 10px; }</style><div class=\"box\">Box Model Example</div>",
+          "output": "Displays a padded and bordered red-tinted box."
+        },
+        {
+          "title": "CSS Flexbox Centering",
+          "language": "CSS3",
+          "question": "Center items using CSS Flexbox.",
+          "code": "<style>.flex-container { display: flex; justify-content: center; align-items: center; height: 100px; background: #e0e7ff; }</style><div class=\"flex-container\"><b>Centered Content</b></div>",
+          "output": "Centers content horizontally and vertically inside container."
+        },
+        {
+          "title": "CSS Rounded Image",
+          "language": "CSS3",
+          "question": "Create a circular profile image using border-radius.",
+          "code": "<style>.circle-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }</style><img src=\"photo.jpg\" class=\"circle-img\" alt=\"Profile\">",
+          "output": "Displays the image cropped in a circular shape."
+        },
+        {
+          "title": "CSS Button Styling",
+          "language": "CSS3",
+          "question": "Design a modern interactive button with hover effect.",
+          "code": "<style>.btn { background: #7c3aed; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s; }.btn:hover { background: #6d28d9; }</style><button class=\"btn\">Click Me</button>",
+          "output": "Displays a purple button that darkens on mouse hover."
+        },
+        {
+          "title": "CSS Navigation Bar",
+          "language": "CSS3",
+          "question": "Create a horizontal navigation bar.",
+          "code": "<style>.navbar { display: flex; background: #1e293b; padding: 10px; }.navbar a { color: white; margin-right: 15px; text-decoration: none; }</style><nav class=\"navbar\"><a href=\"#\">Home</a><a href=\"#\">About</a><a href=\"#\">Contact</a></nav>",
+          "output": "Displays a dark horizontal navigation menu."
+        },
+        {
+          "title": "CSS Grid Layout",
+          "language": "CSS3",
+          "question": "Create a 2-column grid layout.",
+          "code": "<style>.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }.grid-item { background: #e2e8f0; padding: 15px; }</style><div class=\"grid\"><div class=\"grid-item\">Item 1</div><div class=\"grid-item\">Item 2</div></div>",
+          "output": "Displays two equal columns side by side."
+        },
+        {
+          "title": "CSS Table Styling",
+          "language": "CSS3",
+          "question": "Style an HTML table with borders, padding, and alternating row colors.",
+          "code": "<style>table { width: 100%; border-collapse: collapse; } th, td { border: 1px solid #cbd5e1; padding: 8px; text-align: left; } tr:nth-child(even) { background-color: #f8fafc; }</style><table><tr><th>Name</th><th>Role</th></tr><tr><td>Kaushalji</td><td>Developer</td></tr></table>",
+          "output": "Displays a clean styled table with stripped rows."
+        },
+        {
+          "title": "CSS Tooltip Effect",
+          "language": "CSS3",
+          "question": "Create a hover tooltip using CSS.",
+          "code": "<style>.tooltip { position: relative; display: inline-block; cursor: pointer; }.tooltip .tooltiptext { visibility: hidden; width: 120px; background-color: black; color: #fff; text-align: center; border-radius: 6px; padding: 5px; position: absolute; z-index: 1; bottom: 125%; left: 50%; margin-left: -60px; }.tooltip:hover .tooltiptext { visibility: visible; }</style><div class=\"tooltip\">Hover over me<span class=\"tooltiptext\">Tooltip text</span></div>",
+          "output": "Displays tooltip box when hovering over text."
+        },
+        {
+          "title": "CSS Card Design",
+          "language": "CSS3",
+          "question": "Create a shadow product card layout.",
+          "code": "<style>.card { box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px; border-radius: 12px; background: white; max-width: 300px; }</style><div class=\"card\"><h3>Card Title</h3><p>This is a shadow card container.</p></div>",
+          "output": "Displays a card container with soft box shadow."
+        },
+        {
+          "title": "CSS Gradient Background",
+          "language": "CSS3",
+          "question": "Apply linear gradient background to a container.",
+          "code": "<style>.gradient-box { background: linear-gradient(135deg, #7c3aed, #2563eb); color: white; padding: 30px; border-radius: 12px; }</style><div class=\"gradient-box\">Gradient Header Box</div>",
+          "output": "Displays box with smooth purple to blue color gradient."
+        },
+        {
+          "title": "CSS Font Import",
+          "language": "CSS3",
+          "question": "Import Google font and apply to paragraph.",
+          "code": "<style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'); p { font-family: 'Poppins', sans-serif; }</style><p>This text uses Google Poppins font.</p>",
+          "output": "Renders paragraph text in Google Poppins typeface."
+        },
+        {
+          "title": "CSS Opacity and Transparency",
+          "language": "CSS3",
+          "question": "Apply transparency to an element using opacity.",
+          "code": "<style>.transparent-box { background: #000; color: #fff; opacity: 0.7; padding: 20px; }</style><div class=\"transparent-box\">Semi-transparent box content</div>",
+          "output": "Displays a darkened box with 70% opacity level."
+        },
+        {
+          "title": "CSS Sticky Footer",
+          "language": "CSS3",
+          "question": "Create a sticky footer layout.",
+          "code": "<style>.footer { position: fixed; left: 0; bottom: 0; width: 100%; background-color: #334155; color: white; text-align: center; padding: 10px; }</style><div class=\"footer\"><p>Sticky Footer at Bottom</p></div>",
+          "output": "Fixes footer bar permanently at bottom of viewport."
+        },
+        {
+          "title": "CSS Badge Notification",
+          "language": "CSS3",
+          "question": "Create a notification badge count element.",
+          "code": "<style>.badge { background-color: #ef4444; color: white; padding: 4px 8px; border-radius: 50%; font-size: 12px; }</style><span>Inbox <span class=\"badge\">5</span></span>",
+          "output": "Displays a rounded red notification counter badge."
+        },
+        {
+          "title": "CSS Animation Bounce",
+          "language": "CSS3",
+          "question": "Create a simple pulse animation using CSS keyframes.",
+          "code": "<style>@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } } .animated-box { animation: pulse 2s infinite; background: #2563eb; color: white; padding: 10px; text-align: center; }</style><div class=\"animated-box\">Pulsing Element</div>",
+          "output": "Continuously scales element size up and down."
+        },
+        {
+          "title": "CSS Scrollbar Customization",
+          "language": "CSS3",
+          "question": "Customize web scrollbar track and thumb color.",
+          "code": "<style>::-webkit-scrollbar { width: 8px; }::-webkit-scrollbar-track { background: #f1f1f1; }::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }</style><p>Scrollbar is customized for this page.</p>",
+          "output": "Renders custom thin scrollbar on browser windows."
+        },
+        {
+          "title": "CSS Media Query Responsive",
+          "language": "CSS3",
+          "question": "Change background color based on screen width using media query.",
+          "code": "<style>.responsive-box { background: #3b82f6; color: white; padding: 20px; } @media (max-width: 600px) { .responsive-box { background: #ef4444; } }</style><div class=\"responsive-box\">Resize screen to test media query</div>",
+          "output": "Changes box background color when screen width is under 600px."
+        },
+        {
+          "title": "CSS Text Overflow Ellipsis",
+          "language": "CSS3",
+          "question": "Truncate long text with ellipsis overflow.",
+          "code": "<style>.truncate { white-space: nowrap; overflow: hidden; text-align: left; text-overflow: ellipsis; width: 200px; border: 1px solid #ccc; }</style><div class=\"truncate\">This is a very long text sentence that will be truncated automatically.</div>",
+          "output": "Crops long text with trailing three dots (...)."
+        }
+      ]
+    },
+    {
+      "category": "JavaScript",
+      "items": [
+        {
+          "title": "JS Alert Box",
+          "language": "JavaScript",
+          "question": "Trigger a JavaScript alert popup.",
+          "code": "<button onclick=\"alert('Hello from Kaushalji Portal!')\">Click Alert</button>",
+          "output": "Displays browser popup alert dialog when clicked."
+        },
+        {
+          "title": "JS DOM Content Change",
+          "language": "JavaScript",
+          "question": "Change text content of HTML element using JavaScript.",
+          "code": "<h2 id=\"heading\">Original Heading</h2><button onclick=\"document.getElementById('heading').textContent='Updated by JS!'\">Change Text</button>",
+          "output": "Changes heading text content dynamically on button click."
+        },
+        {
+          "title": "JS Simple Calculator Addition",
+          "language": "JavaScript",
+          "question": "Add two numbers using JavaScript function.",
+          "code": "<script>function add(a, b) { return a + b; } console.log(add(10, 20));</script><p>Check browser console for sum output (30).</p>",
+          "output": "Calculates and outputs sum of 10 and 20 in console."
+        },
+        {
+          "title": "JS Even or Odd Checker",
+          "language": "JavaScript",
+          "question": "Check whether a number is even or odd.",
+          "code": "<script>function checkEvenOdd(num) { return num % 2 === 0 ? 'Even' : 'Odd'; } alert(checkEvenOdd(7));</script>",
+          "output": "Alerts whether number 7 is Odd or Even."
+        },
+        {
+          "title": "JS Array Methods",
+          "language": "JavaScript",
+          "question": "Perform push and pop operations on JavaScript array.",
+          "code": "<script>let arr = ['HTML', 'CSS']; arr.push('JS'); console.log(arr);</script><p>Array items updated in console.</p>",
+          "output": "Adds item to array and prints ['HTML', 'CSS', 'JS'] in console."
+        },
+        {
+          "title": "JS Date and Time Display",
+          "language": "JavaScript",
+          "question": "Display current date and time on webpage.",
+          "code": "<p id=\"dateBox\"></p><script>document.getElementById('dateBox').textContent = new Date().toLocaleString();</script>",
+          "output": "Displays current system date and timestamp."
+        },
+        {
+          "title": "JS Form Validation",
+          "language": "JavaScript",
+          "question": "Validate empty input field before form submission.",
+          "code": "<form onsubmit=\"return validateForm()\"><input type=\"text\" id=\"username\" placeholder=\"Enter name\"><button type=\"submit\">Submit</button></form><script>function validateForm() { let x = document.getElementById('username').value; if (x === '') { alert('Name must be filled out'); return false; } }</script>",
+          "output": "Prevents empty submission and alerts error message."
+        },
+        {
+          "title": "JS Light/Dark Theme Toggle",
+          "language": "JavaScript",
+          "question": "Toggle dark mode class on body element.",
+          "code": "<style>.dark-mode { background: #0f172a; color: white; }</style><button onclick=\"document.body.classList.toggle('dark-mode')\">Toggle Theme</button>",
+          "output": "Switches webpage background and text color themes."
+        },
+        {
+          "title": "JS Counter Application",
+          "language": "JavaScript",
+          "question": "Create an interactive increment and decrement counter.",
+          "code": "<h2 id=\"count\">0</h2><button onclick=\"document.getElementById('count').textContent++\">Increase</button><button onclick=\"document.getElementById('count').textContent--\">Decrease</button>",
+          "output": "Increments or decrements count value on clicking buttons."
+        },
+        {
+          "title": "JS Local Storage Save",
+          "language": "JavaScript",
+          "question": "Save user name to browser localStorage.",
+          "code": "<input type=\"text\" id=\"nameInput\" placeholder=\"Your name\"><button onclick=\"localStorage.setItem('user', document.getElementById('nameInput').value); alert('Saved!')\">Save</button>",
+          "output": "Stores input value securely in browser localStorage."
+        },
+        {
+          "title": "JS Random Number Generator",
+          "language": "JavaScript",
+          "question": "Generate a random number between 1 and 100.",
+          "code": "<button onclick=\"alert(Math.floor(Math.random() * 100) + 1)\">Generate Random</button>",
+          "output": "Displays a random number popup dialog on click."
+        },
+        {
+          "title": "JS String Reverse Function",
+          "language": "JavaScript",
+          "question": "Reverse a given string using JavaScript methods.",
+          "code": "<script>function reverseStr(str) { return str.split('').reverse().join(''); } console.log(reverseStr('Kaushal'));</script><p>Check console for reversed string.</p>",
+          "output": "Reverses string 'Kaushal' to 'llahsuaK'."
+        },
+        {
+          "title": "JS Password Visibility Toggle",
+          "language": "JavaScript",
+          "question": "Toggle password field type between password and text.",
+          "code": "<input type=\"password\" id=\"pwd\"><button onclick=\"let p=document.getElementById('pwd'); p.type=p.type==='password'?'text':'password';\">Show/Hide</button>",
+          "output": "Toggles visibility of password characters in input."
+        },
+        {
+          "title": "JS Simple Calculator",
+          "language": "JavaScript",
+          "question": "Perform basic arithmetic calculations using eval.",
+          "code": "<input type=\"text\" id=\"calcInput\" value=\"10+20\"><button onclick=\"alert(eval(document.getElementById('calcInput').value))\">Calculate</button>",
+          "output": "Evaluates expression and displays result (30)."
+        },
+        {
+          "title": "JS Filter Array Method",
+          "language": "JavaScript",
+          "question": "Filter numbers greater than 10 from an array.",
+          "code": "<script>let numbers = [5, 12, 8, 130, 44]; let filtered = numbers.filter(n => n > 10); console.log(filtered);</script>",
+          "output": "Outputs [12, 130, 44] in browser console."
+        },
+        {
+          "title": "JS Image Slider Switcher",
+          "language": "JavaScript",
+          "question": "Switch image source dynamically on button click.",
+          "code": "<img id=\"myImg\" src=\"img1.jpg\" width=\"200\"><button onclick=\"document.getElementById('myImg').src='img2.jpg'\">Next Image</button>",
+          "output": "Changes image source file dynamically when clicked."
+        },
+        {
+          "title": "JS Character Count in Textarea",
+          "language": "JavaScript",
+          "question": "Count remaining characters typed in textarea box.",
+          "code": "<textarea oninput=\"document.getElementById('countNum').textContent=this.value.length\" placeholder=\"Type here...\"></textarea><p>Characters: <span id=\"countNum\">0</span></p>",
+          "output": "Updates live character count as user types."
+        },
+        {
+          "title": "JS Multiplication Table Printer",
+          "language": "JavaScript",
+          "question": "Print multiplication table of 5 in console.",
+          "code": "<script>for(let i=1; i<=10; i++) { console.log(`5 * ${i} = ${5*i}`); }</script>",
+          "output": "Prints table of 5 from 5x1 to 5x10 in console."
+        },
+        {
+          "title": "JS Fetch API Example",
+          "language": "JavaScript",
+          "question": "Fetch mock JSON data using JavaScript Fetch API.",
+          "code": "<script>fetch('https://jsonplaceholder.typicode.com/todos/1').then(res => res.json()).then(data => console.log(data));</script>",
+          "output": "Fetches remote JSON object and prints to console."
+        },
+        {
+          "title": "JS DOM Element Remover",
+          "language": "JavaScript",
+          "question": "Remove an element from DOM when clicked.",
+          "code": "<div id=\"boxToRemove\" onclick=\"this.remove()\" style=\"background:#fee2e2;padding:10px;cursor:pointer;\">Click me to delete this box</div>",
+          "output": "Removes element completely from page when clicked."
+        }
+      ]
+    },
+    {
+      "category": "Python",
+      "items": [
+        {
+          "title": "Python Hello World",
+          "language": "Python",
+          "question": "Write a Python script to print Hello World.",
+          "code": "print('Hello, NIELIT O Level Student!')",
+          "output": "Hello, NIELIT O Level Student!"
+        },
+        {
+          "title": "Python Arithmetic Operations",
+          "language": "Python",
+          "question": "Perform basic arithmetic calculations in Python.",
+          "code": "a = 20\nb = 10\nprint('Sum:', a + b)\nprint('Difference:', a - b)\nprint('Product:', a * b)\nprint('Division:', a / b)",
+          "output": "Sum: 30\nDifference: 10\nProduct: 200\nDivision: 2.0"
+        },
+        {
+          "title": "Python Even or Odd",
+          "language": "Python",
+          "question": "Check if a number is even or odd.",
+          "code": "num = int(input('Enter number: '))\nif num % 2 == 0:\n    print(num, 'is Even')\nelse:\n    print(num, 'is Odd')",
+          "output": "Prints whether the entered number is even or odd."
+        },
+        {
+          "title": "Python Factorial Calculation",
+          "language": "Python",
+          "question": "Find factorial of a number using loop.",
+          "code": "n = 5\nfact = 1\nfor i in range(1, n + 1):\n    fact *= i\nprint('Factorial of', n, 'is', fact)",
+          "output": "Factorial of 5 is 120"
+        },
+        {
+          "title": "Python Prime Number Checker",
+          "language": "Python",
+          "question": "Check if a given number is prime.",
+          "code": "num = 11\nif num > 1:\n    for i in range(2, num):\n        if (num % i) == 0:\n            print(num, 'is not prime')\n            break\n    else:\n        print(num, 'is a prime number')",
+          "output": "11 is a prime number"
+        },
+        {
+          "title": "Python Fibonacci Series",
+          "language": "Python",
+          "question": "Print Fibonacci series up to N terms.",
+          "code": "n = 10\na, b = 0, 1\nfor _ in range(n):\n    print(a, end=' ')\n    a, b = b, a + b",
+          "output": "0 1 1 2 3 5 8 13 21 34"
+        },
+        {
+          "title": "Python String Palindrome",
+          "language": "Python",
+          "question": "Check whether a string is palindrome or not.",
+          "code": "text = 'madam'\nif text == text[::-1]:\n    print('Palindrome')\nelse:\n    print('Not Palindrome')",
+          "output": "Palindrome"
+        },
+        {
+          "title": "Python List Operations",
+          "language": "Python",
+          "question": "Create list, append items and find maximum element.",
+          "code": "numbers = [45, 12, 89, 34, 99, 21]\nprint('Maximum:', max(numbers))\nprint('Minimum:', min(numbers))\nprint('Sorted:', sorted(numbers))",
+          "output": "Maximum: 99\nMinimum: 12\nSorted: [12, 21, 34, 45, 89, 99]"
+        },
+        {
+          "title": "Python Dictionary Creation",
+          "language": "Python",
+          "question": "Create student dictionary and access key values.",
+          "code": "student = {'name': 'Kaushalji', 'course': 'O Level', 'year': 2026}\nprint('Name:', student['name'])\nprint('Course:', student.get('course'))",
+          "output": "Name: Kaushalji\nCourse: O Level"
+        },
+        {
+          "title": "Python File Writing and Reading",
+          "language": "Python",
+          "question": "Write text to a file and read it back.",
+          "code": "with open('test.txt', 'w') as f:\n    f.write('Hello Python File Handling!')\nwith open('test.txt', 'r') as f:\n    print(f.read())",
+          "output": "Hello Python File Handling!"
+        },
+        {
+          "title": "Python Function with Default Arguments",
+          "language": "Python",
+          "question": "Create function to greet user with default name.",
+          "code": "def greet(name='Student'):\n    print('Hello', name)\ngreet('Kaushalji')\ngreet()",
+          "output": "Hello Kaushalji\nHello Student"
+        },
+        {
+          "title": "Python Lambda Function",
+          "language": "Python",
+          "question": "Use lambda function to find cube of a number.",
+          "code": "cube = lambda x: x ** 3\nprint('Cube of 3 is:', cube(3))",
+          "output": "Cube of 3 is: 27"
+        },
+        {
+          "title": "Python Exception Handling",
+          "language": "Python",
+          "question": "Handle division by zero error safely.",
+          "code": "try:\n    res = 10 / 0\nexcept ZeroDivisionError:\n    print('Error: Cannot divide by zero!')",
+          "output": "Error: Cannot divide by zero!"
+        },
+        {
+          "title": "Python OOP Class and Object",
+          "language": "Python",
+          "question": "Create a student class with attributes and methods.",
+          "code": "class Student:\n    def __init__(self, name):\n        self.name = name\n    def show(self):\n        print('Student Name:', self.name)\ns = Student('Kaushalji')\ns.show()",
+          "output": "Student Name: Kaushalji"
+        },
+        {
+          "title": "Python Count Vowels in String",
+          "language": "Python",
+          "question": "Count number of vowels in a given sentence.",
+          "code": "sentence = 'Welcome to NIELIT Practical Lab'\nvowels = 'aeiouAEIOU'\ncount = sum(1 for char in sentence if char in vowels)\nprint('Total Vowels:', count)",
+          "output": "Total Vowels: 10"
+        },
+        {
+          "title": "Python Random Module",
+          "language": "Python",
+          "question": "Generate random integer and choice from list.",
+          "code": "import random\nprint('Random Int:', random.randint(1, 10))\nprint('Random Choice:', random.choice(['Python', 'HTML', 'CSS']))",
+          "output": "Generates random integer and random item selection."
+        },
+        {
+          "title": "Python Set Operations",
+          "language": "Python",
+          "question": "Perform union and intersection on sets.",
+          "code": "set1 = {1, 2, 3, 4}\nset2 = {3, 4, 5, 6}\nprint('Union:', set1 | set2)\nprint('Intersection:', set1 & set2)",
+          "output": "Union: {1, 2, 3, 4, 5, 6}\nIntersection: {3, 4}"
+        },
+        {
+          "title": "Python Matrix Addition",
+          "language": "Python",
+          "question": "Add two 2x2 matrices using lists.",
+          "code": "A = [[1, 2], [3, 4]]\nB = [[5, 6], [7, 8]]\nresult = [[A[i][j] + B[i][j] for j in range(2)] for i in range(2)]\nprint(result)",
+          "output": "[[6, 8], [10, 12]]"
+        },
+        {
+          "title": "Python CSV File Reading",
+          "language": "Python",
+          "question": "Read CSV file data using python csv module.",
+          "code": "import csv\nprint('CSV reading module loaded successfully.')",
+          "output": "CSV reading module loaded successfully."
+        },
+        {
+          "title": "Python Lambda with Filter",
+          "language": "Python",
+          "question": "Filter even numbers from list using filter and lambda.",
+          "code": "nums = [1, 2, 3, 4, 5, 6, 7, 8]\nevens = list(filter(lambda x: x % 2 == 0, nums))\nprint('Evens:', evens)",
+          "output": "Evens: [2, 4, 6, 8]"
+        }
+      ]
+    },
+    {
+      "category": "IoT",
+      "items": [
+        {
+          "title": "Arduino Blink LED",
+          "language": "Arduino C",
+          "question": "Blink an onboard LED at 1 second interval.",
+          "code": "void setup() {\n  pinMode(LED_BUILTIN, OUTPUT);\n}\nvoid loop() {\n  digitalWrite(LED_BUILTIN, HIGH);\n  delay(1000);\n  digitalWrite(LED_BUILTIN, LOW);\n  delay(1000);\n}",
+          "output": "Onboard LED turns ON and OFF repeatedly every second."
+        },
+        {
+          "title": "Arduino Read Analog Sensor",
+          "language": "Arduino C",
+          "question": "Read analog sensor values from pin A0.",
+          "code": "void setup() {\n  Serial.begin(9600);\n}\nvoid loop() {\n  int sensorValue = analogRead(A0);\n  Serial.println(sensorValue);\n  delay(500);\n}",
+          "output": "Prints analog sensor voltage values to Serial Monitor."
+        },
+        {
+          "title": "Arduino Pushbutton LED Control",
+          "language": "Arduino C",
+          "question": "Control LED state using a push button switch.",
+          "code": "const int buttonPin = 2;\nconst int ledPin = 13;\nvoid setup() {\n  pinMode(ledPin, OUTPUT);\n  pinMode(buttonPin, INPUT);\n}\nvoid loop() {\n  int state = digitalRead(buttonPin);\n  digitalWrite(ledPin, state);\n}",
+          "output": "LED glows when push button is pressed down."
+        },
+        {
+          "title": "Arduino RGB LED Color Mixing",
+          "language": "Arduino C",
+          "question": "Change RGB LED colors using PWM output pins.",
+          "code": "int redPin = 9, greenPin = 10, bluePin = 11;\nvoid setup() {\n  pinMode(redPin, OUTPUT);\n  pinMode(greenPin, OUTPUT);\n  pinMode(bluePin, OUTPUT);\n}\nvoid loop() {\n  analogWrite(redPin, 255);\n  analogWrite(greenPin, 128);\n  analogWrite(bluePin, 0);\n}",
+          "output": "Mixes primary RGB levels to output custom color."
+        },
+        {
+          "title": "Arduino Temperature Sensor LM35",
+          "language": "Arduino C",
+          "question": "Read temperature values using LM35 sensor.",
+          "code": "void setup() {\n  Serial.begin(9600);\n}\nvoid loop() {\n  int val = analogRead(A0);\n  float mv = (val / 1024.0) * 5000;\n  float celsius = mv / 10;\n  Serial.print(\"Temp: \");\n  Serial.print(celsius);\n  Serial.println(\" C\");\n  delay(1000);\n}",
+          "output": "Prints ambient temperature reading in Celsius."
+        },
+        {
+          "title": "Arduino Ultrasonic Distance Sensor",
+          "language": "Arduino C",
+          "question": "Measure distance using HC-SR04 ultrasonic sensor.",
+          "code": "const int trigPin = 9;\nconst int echoPin = 10;\nvoid setup() {\n  Serial.begin(9600);\n  pinMode(trigPin, OUTPUT);\n  pinMode(echoPin, INPUT);\n}\nvoid loop() {\n  digitalWrite(trigPin, LOW);\n  delayMicroseconds(2);\n  digitalWrite(trigPin, HIGH);\n  delayMicroseconds(10);\n  digitalWrite(trigPin, LOW);\n  long duration = pulseIn(echoPin, HIGH);\n  int distance = duration * 0.034 / 2;\n  Serial.print(\"Distance: \");\n  Serial.print(distance);\n  Serial.println(\" cm\");\n  delay(500);\n}",
+          "output": "Calculates and prints obstacle distance in centimeters."
+        },
+        {
+          "title": "Arduino Servo Motor Control",
+          "language": "Arduino C",
+          "question": "Sweep servo motor angle from 0 to 180 degrees.",
+          "code": "#include <Servo.h>\nServo myservo;\nvoid setup() {\n  myservo.attach(9);\n}\nvoid loop() {\n  myservo.write(0);\n  delay(1000);\n  myservo.write(180);\n  delay(1000);\n}",
+          "output": "Rotates servo motor arm back and forth between 0 and 180 degrees."
+        },
+        {
+          "title": "Arduino Buzzer Alarm Tone",
+          "language": "Arduino C",
+          "question": "Generate tone frequency on piezoelectric buzzer.",
+          "code": "int buzzerPin = 8;\nvoid setup() {\n  pinMode(buzzerPin, OUTPUT);\n}\nvoid loop() {\n  tone(buzzerPin, 1000);\n  delay(500);\n  noTone(buzzerPin);\n  delay(500);\n}",
+          "output": "Beeps buzzer sound intermittently every 500ms."
+        },
+        {
+          "title": "Arduino LDR Light Detector",
+          "language": "Arduino C",
+          "question": "Detect ambient light level using LDR sensor.",
+          "code": "void setup() {\n  Serial.begin(9600);\n}\nvoid loop() {\n  int ldrVal = analogRead(A0);\n  Serial.print(\"Light Level: \");\n  Serial.println(ldrVal);\n  delay(500);\n}",
+          "output": "Outputs light intensity values based on room brightness."
+        },
+        {
+          "title": "Arduino Relay Module Switch",
+          "language": "Arduino C",
+          "question": "Control high voltage appliance using 5V relay module.",
+          "code": "int relayPin = 7;\nvoid setup() {\n  pinMode(relayPin, OUTPUT);\n}\nvoid loop() {\n  digitalWrite(relayPin, HIGH);\n  delay(2000);\n  digitalWrite(relayPin, LOW);\n  delay(2000);\n}",
+          "output": "Triggers relay switch click ON and OFF every 2 seconds."
+        }
+      ]
+    }
+  ]
+}
