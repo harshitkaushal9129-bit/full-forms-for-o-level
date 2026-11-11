@@ -234,3 +234,80 @@ function renderPracticalLab(){
     };
   });
 }
+
+
+/* =========================================================
+   EXTENDED APP INFO, SYSTEM METRICS & FUTURISTIC ANIMATION
+   ========================================================= */
+// 1. Futuristic Intro Splash Animation Handling
+window.addEventListener('load', () => {
+  const splash = document.getElementById('futuristicSplash');
+  if(splash) {
+    setTimeout(() => {
+      splash.classList.add('fade-out');
+      setTimeout(() => splash.remove(), 700);
+    }, 2800);
+  }
+});
+// 2. Override 'App Info' Action to Open Custom Div Modal
+const origMenuClick = $('#menu').onclick;
+$('#menu').onclick = (e) => {
+  let a = e.target.dataset.action;
+  if (a === 'about') {
+    $('#menu').classList.add('hidden');
+    openCustomAppInfoDiv();
+    return;
+  }
+  if (typeof origMenuClick === 'function') origMenuClick(e);
+};
+// Open Custom App Info Div Modal
+function openCustomAppInfoDiv() {
+  const modal = $('#appInfoDiv');
+  if(modal) {
+    modal.classList.remove('hidden');
+    updateLiveMetrics();
+  }
+}
+// Close Button Listener for App Info Div
+$('#closeAppInfo').onclick = () => {
+  $('#appInfoDiv').classList.add('hidden');
+};
+// Close when clicking outside of div modal content
+$('#appInfoDiv').onclick = (e) => {
+  if (e.target.id === 'appInfoDiv') {
+    $('#appInfoDiv').classList.add('hidden');
+  }
+};
+// 3. Realtime Clock, Date & Battery API Updates
+function updateLiveMetrics() {
+  // Clock & Date
+  const now = new Date();
+  const clockEl = $('#liveClock');
+  const dateEl = $('#liveDate');
+  if (clockEl) clockEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  if (dateEl) dateEl.textContent = now.toLocaleDateString([], { day: '2-digit', month: 'short', year: 'numeric' });
+  // Battery Status API
+  const batEl = $('#batteryStatus');
+  if ('getBattery' in navigator) {
+    navigator.getBattery().then(battery => {
+      const renderBat = () => {
+        const level = Math.round(battery.level * 100);
+        const charging = battery.charging ? ' ⚡' : '';
+        if (batEl) batEl.textContent = `${level}%${charging}`;
+      };
+      renderBat();
+      battery.addEventListener('levelchange', renderBat);
+      battery.addEventListener('chargingchange', renderBat);
+    });
+  } else {
+    if (batEl) batEl.textContent = 'N/A';
+  }
+}
+// Update clock every second
+setInterval(() => {
+  const appInfoModal = $('#appInfoDiv');
+  if (appInfoModal && !appInfoModal.classList.contains('hidden')) {
+    updateLiveMetrics();
+  }
+}, 1000);
+
