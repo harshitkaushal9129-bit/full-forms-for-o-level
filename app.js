@@ -127,12 +127,12 @@ if (importantBtn) {
       if (!response.ok) throw new Error('imp.json not found');
       const data = await response.json();
       
-      let htmlContent = '<div class="imp-container" style="display:flex;flex-direction:column;gap:12px;">';
+      let htmlContent = '<div class="imp-container" style="display:flex;flex-direction:column;gap:14px;">';
       if (Array.isArray(data)) {
         data.forEach((item, index) => {
-          htmlContent += `<div style="padding:14px; background:rgba(255,255,255,0.03); border:1px solid var(--line); border-radius:12px;">
-            <b style="color:var(--accent);">#${index + 1} ${esc(item.title || 'Important Point')}</b>
-            <p style="margin:6px 0 0 0; font-size:14px; color:var(--muted);">${esc(item.description || item)}</p>
+          htmlContent += `<div style="padding:16px; background:rgba(255,255,255,0.03); border:1px solid var(--line); border-radius:14px;">
+            <h3 style="margin:0 0 8px 0; color:var(--accent); font-family:var(--font-heading); font-size:16px;">${esc(item.title || 'Important Topic')}</h3>
+            <div style="font-size:14px; color:var(--muted); line-height:1.6; white-space:pre-line;">${esc(item.description || item)}</div>
           </div>`;
         });
       } else {
@@ -140,9 +140,46 @@ if (importantBtn) {
       }
       htmlContent += '</div>';
 
-      panel('⭐ Important Points', htmlContent);
+      panel('⭐ Book Reference & Important Points', htmlContent);
     } catch (error) {
       panel('⭐ Important Points', '<p style="color:#ef4444;">imp.json फ़ाइल लोड करने में विफल रही। कृपया जाँच करें कि क्या imp.json फ़ाइल मौजूद है।</p>');
+    }
+  };
+}
+
+// --- Shortcut Keys Button Handler (shortcuts.json) ---
+const shortcutBtn = document.getElementById('shortcutBtn');
+if (shortcutBtn) {
+  shortcutBtn.onclick = async () => {
+    try {
+      const response = await fetch('shortcuts.json');
+      if (!response.ok) throw new Error('shortcuts.json not found');
+      const data = await response.json();
+      
+      let htmlContent = '<div class="shortcut-container" style="display:flex;flex-direction:column;gap:16px;">';
+      if (Array.isArray(data)) {
+        data.forEach(group => {
+          htmlContent += `<div style="background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:14px; padding:14px;">
+            <h3 style="margin:0 0 10px 0; color:var(--accent); font-family:var(--font-heading); font-size:15px; border-bottom:1px solid var(--line); padding-bottom:6px;">⌨️ ${esc(group.category)}</h3>
+            <div style="display:flex; flex-direction:column; gap:8px;">`;
+          
+          group.keys.forEach(item => {
+            htmlContent += `<div style="display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.2); padding:8px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
+              <code style="background:var(--soft); color:var(--accent); padding:4px 8px; border-radius:6px; font-weight:bold; font-family:monospace; border:1px solid var(--line);">${esc(item.key)}</code>
+              <span style="font-size:13px; color:var(--muted); text-align:right; max-width:60%;">${esc(item.desc)}</span>
+            </div>`;
+          });
+
+          htmlContent += `</div></div>`;
+        });
+      } else {
+        htmlContent += `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+      }
+      htmlContent += '</div>';
+
+      panel('⌨️ Master Shortcut Keys', htmlContent);
+    } catch (error) {
+      panel('⌨️ Master Shortcut Keys', '<p style="color:#ef4444;">shortcuts.json फ़ाइल लोड करने में विफल रही। कृपया जाँच करें कि क्या यह फ़ाइल मौजूद है।</p>');
     }
   };
 }
@@ -281,14 +318,14 @@ function renderPracticalLab(){
   });
 }
 
-// --- Safe Splash Screen Handler (Fixed) ---
+// --- Safe Splash Screen Handler ---
 window.addEventListener('DOMContentLoaded', () => {
   const splash = document.getElementById('futuristicSplash');
   if(splash) {
     setTimeout(() => {
       splash.classList.add('fade-out');
       setTimeout(() => splash.remove(), 500);
-    }, 1500); // 1.5 सेकंड में स्पलैश स्क्रीन हट जाएगी
+    }, 1500);
   }
 });
 
