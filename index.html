@@ -11,8 +11,6 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- FUTURISTIC INTRO / SPLASH OVERLAY -->
 <div id="futuristicSplash" class="splash-overlay">
   <div class="cyber-container">
     <div class="ring ring-outer"></div>
@@ -24,7 +22,6 @@
     <div class="cyber-sub">MASTER PORTAL INITIALIZING...</div>
   </div>
 </div>
-
 <header class="top">
 <div class="brand">
 <img src="icon.svg" alt="logo">
@@ -34,14 +31,13 @@
 <button id="themeBtn" title="Theme">☾</button>
 <button id="menuBtn" title="Menu">⋮</button>
 </div>
-<div id="menu" class="menu hidden">
-<button data-action="about">App Info</button>
-<button data-action="developer">Developer Info</button>
-<button data-action="install">Install App</button>
-<button data-action="share">Share Portal</button>
-</div>
 </header>
-
+<div class="quick-nav-bar">
+  <button class="q-nav-btn" id="navPractical">🧪 Practicals</button>
+  <button class="q-nav-btn" id="navTheory">📖 Theory Notes</button>
+  <button class="q-nav-btn" id="navShortcuts">⌨️ Shortcuts</button>
+  <button class="q-nav-btn" id="navMenuModal">⚡ Quick Menu</button>
+</div>
 <section class="hero">
 <div>
 <span class="eyebrow">NIELIT O LEVEL · REVISION 5.1</span>
@@ -50,30 +46,22 @@
 <div class="heroBtns">
 <button id="continueBtn" class="primary">📘 Start Learning</button>
 <button id="installHero" class="ghost">＋ Install App</button>
-<!-- Important Points Circle Button -->
-<button id="importantBtn" class="circle-btn" title="Important Points">⭐</button>
-<!-- Shortcut Keys Circle Button -->
-<button id="shortcutBtn" class="circle-btn" title="Master Shortcut Keys">⌨️</button>
 </div>
 </div>
 <div class="heroArt">⌘<span>O LEVEL</span></div>
 </section>
-
 <section class="stats">
 <div><b id="moduleCount">4</b><small>Modules</small></div>
 <div><b id="unitCount">0</b><small>Units</small></div>
 <div><b id="topicCount">0</b><small>Topics</small></div>
 <div><b id="doneCount">0</b><small>Completed</small></div>
 </section>
-
 <div class="toolbar">
 <input id="search" placeholder="🔎 Search topics, notes..." aria-label="Search topics">
 <button id="quizTop" class="ghost">🎯 Quiz</button>
 </div>
-
 <nav id="moduleTabs" class="tabs"></nav>
 <main id="content"></main>
-
 <section class="toolkit">
 <h2>🎯 Exam Toolkit</h2>
 <div class="toolGrid">
@@ -83,7 +71,6 @@
 <button id="syllabusBtn">Official Syllabus</button>
 </div>
 </section>
-
 <footer>
 <b>kaushalji</b>
 <p>Full Stack Web Developer & Tech Educator</p>
@@ -93,21 +80,15 @@
 </div>
 <small>Study companion • Not an official NIELIT application</small>
 </footer>
-
-<!-- MODAL IMAGE VIEW -->
 <div id="imageModal" class="modal hidden" role="dialog" aria-modal="true">
 <button id="closeImage" class="close" aria-label="Close">×</button>
 <img id="largeImage" alt="Topic illustration">
 <p id="imageCaption"></p>
 </div>
-
-<!-- SIDE PANEL CONTAINER -->
 <div id="panel" class="panel hidden">
 <div class="panelHead"><b id="panelTitle">Details</b><button id="closePanel">×</button></div>
 <div id="panelBody"></div>
 </div>
-
-<!-- CUSTOM APP INFO DIV OVERLAY -->
 <div id="appInfoDiv" class="custom-div-modal hidden">
   <div class="div-modal-content">
     <div class="div-modal-head">
@@ -118,26 +99,24 @@
       <div class="cyber-card">
         <div class="system-widget">
           <div class="widget-item">
-            <span class="w-label">🔋 Battery Status</span>
+            <span class="w-label">🔋 Battery</span>
             <span id="batteryStatus" class="w-val">Detecting...</span>
           </div>
           <div class="widget-item">
-            <span class="w-label">🕒 Live Clock</span>
-            <span id="liveClock" class="w-val">00:00:00 AM</span>
+            <span class="w-label">🕒 Clock</span>
+            <span id="liveClock" class="w-val">00:00:00</span>
           </div>
           <div class="widget-item">
-            <span class="w-label">📅 Current Date</span>
+            <span class="w-label">📅 Date</span>
             <span id="liveDate" class="w-val">Loading...</span>
           </div>
         </div>
       </div>
-
       <div class="app-desc">
         <h3>NIELIT O Level Master Portal</h3>
         <p>Revision 5.1 study companion featuring structured JSON topics, quick notes, interactive SVG illustrations, practice quiz engine, and offline PWA support.</p>
         <small class="muted">Developed independently • Not affiliated with NIELIT.</small>
       </div>
-
       <div class="social-icon-grid">
         <a href="https://www.youtube.com/@computer-skills9129" target="_blank" class="s-icon yt" title="YouTube">
           <svg viewBox="0 0 24 24"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -159,7 +138,20 @@
     </div>
   </div>
 </div>
-
+<div id="customMenuModal" class="custom-div-modal hidden">
+  <div class="div-modal-content" style="max-width:340px;">
+    <div class="div-modal-head">
+      <span class="div-modal-title">📌 QUICK ACTIONS</span>
+      <button id="closeCustomMenu" class="div-close-btn">&times;</button>
+    </div>
+    <div class="div-modal-body" style="display:flex;flex-direction:column;gap:10px;">
+      <button class="menu-action-btn" data-action="about">⚡ App Info</button>
+      <button class="menu-action-btn" data-action="developer">💻 Developer Info</button>
+      <button class="menu-action-btn" data-action="install">📲 Install App</button>
+      <button class="menu-action-btn" data-action="share">🔗 Share Portal</button>
+    </div>
+  </div>
+</div>
 <script src="app.js"></script>
 </body>
 </html>
