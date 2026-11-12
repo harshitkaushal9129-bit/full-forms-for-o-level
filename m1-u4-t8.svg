@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="650" viewBox="0 0 600 650" role="img" aria-labelledby="title desc">
+<title id="title">Date/Time और Text Functions</title><desc id="desc">दिनांक और समय के लिए टुडे और नाउ फंक्शन्स का उपयोग होता है। टेक्स्ट फंक्शन्स में अपर और लोअर अक्षरों में बदलने के विकल्प होते हैं। लेंथ फंक्शन अक्षरों की संख्या गिनता है। कॉनकेटिनेट फंक्शन दो टेक्स्ट को आपस में जोड़ता है। ये डेटा</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8fafc"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient></defs>
+<rect width="600" height="650" rx="28" fill="url(#bg)"/>
+<rect x="22" y="22" width="556" height="606" rx="24" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+<rect x="22" y="22" width="556" height="12" rx="6" fill="#2563eb"/>
+<text x="48" y="55" font-size="13" letter-spacing="2" font-weight="700" fill="#64748b">NIELIT O LEVEL • M1-U4-T8</text>
+<text x="48" y="72" font-size="29" font-weight="800" fill="#0f172a">Date/Time और Text Functions</text>
+<text x="48" y="155" font-size="16" font-weight="700" fill="#2563eb">Spreadsheet</text>
+<g transform="translate(0 42)">
+        <g transform="translate(80 28)">
+          <rect x="35" y="12" width="340" height="230" rx="18" fill="#ffffff" stroke="#15803d" stroke-width="6"/>
+          <rect x="35" y="12" width="340" height="42" rx="14" fill="#16a34a"/>
+          <text x="58" y="41" font-size="22" fill="white" font-weight="700">fx  Spreadsheet</text>
+          <rect x="55" y="70" width="58" height="34" fill="#dcfce7" stroke="#86b99a" stroke-width="2"/><rect x="113" y="70" width="58" height="34" fill="#f0fdf4" stroke="#86b99a" stroke-width="2"/><rect x="171" y="70" width="58" height="34" fill="#dcfce7" stroke="#86b99a" stroke-width="2"/><rect x="229" y="70" width="58" height="34" fill="#f0fdf4" stroke="#86b99a" stroke-width="2"/><rect x="287" y="70" width="58" height="34" fill="#dcfce7" stroke="#86b99a" stroke-width="2"/><rect x="55" y="104" width="58" height="34" fill="#f0fdf4" stroke="#86b99a" stroke-width="2"/><rect x="113" y="104" width="58" height="34" fill="#dcfce7" stroke="#86b99a" stroke-width="2"/><rect x="171" y="104" width="58" height="34" fill="#f0fdf4" stroke="#86b99a" stroke-width="2"/><rect x="229" y="104" width="58" height="34" fill="#dcfce7" stroke="#86b99a" stroke-width="2"/><rect x="287" y="104" width="58" height="34" fill="#f0fdf4" stroke="#86b99a" stroke-width="2"/><rect x="55" y="138" width="58" height="34" fill="#dcfce7" stroke="#86b99a" stroke-width="2"/><rect x="113" y="138" width="58" height="34" fill="#f0fdf4" stroke="#86b99a" stroke-width="2"/><rect x="171" y="138" width="58" height="34" fill="#dcfce7" stroke="#86b99a" stroke-width="2"/><rect x="229" y="138" width="58" height="34" fill="#f0fdf4" stroke="#86b99a" stroke-width="2"/><rect x="287" y="138" width="58" height="34" fill="#dcfce7" stroke="#86b99a" stroke-width="2"/><rect x="55" y="172" width="58" height="34" fill="#f0fdf4" stroke="#86b99a" stroke-width="2"/><rect x="113" y="172" width="58" height="34" fill="#dcfce7" stroke="#86b99a" stroke-width="2"/><rect x="171" y="172" width="58" height="34" fill="#f0fdf4" stroke="#86b99a" stroke-width="2"/><rect x="229" y="172" width="58" height="34" fill="#dcfce7" stroke="#86b99a" stroke-width="2"/><rect x="287" y="172" width="58" height="34" fill="#f0fdf4" stroke="#86b99a" stroke-width="2"/>
+          <rect x="55" y="70" width="58" height="34" fill="#bbf7d0" stroke="#15803d" stroke-width="3"/>
+          <path d="M410 195 L450 155 L485 170 L530 105" fill="none" stroke="#2563eb" stroke-width="8"/>
+          <path d="M510 105 L530 105 L530 125" fill="none" stroke="#2563eb" stroke-width="8"/>
+          <circle cx="410" cy="195" r="8" fill="#2563eb"/><circle cx="450" cy="155" r="8" fill="#2563eb"/><circle cx="485" cy="170" r="8" fill="#2563eb"/>
+        </g></g>
+<rect x="48" y="365" width="150" height="42" rx="21" fill="#dbeafe"/><text x="123" y="392" text-anchor="middle" font-size="17" font-weight="700" fill="#1e293b">DATA</text><rect x="223" y="365" width="150" height="42" rx="21" fill="#dcfce7"/><text x="298" y="392" text-anchor="middle" font-size="17" font-weight="700" fill="#1e293b">FORMULA</text><rect x="398" y="365" width="150" height="42" rx="21" fill="#fef3c7"/><text x="473" y="392" text-anchor="middle" font-size="17" font-weight="700" fill="#1e293b">ANALYSIS</text>
+<text x="48" y="435" font-size="14" font-weight="800" fill="#64748b">TOPIC SNAPSHOT</text>
+<text x="48" y="445" font-size="16" fill="#334155">दिनांक और समय के लिए टुडे और नाउ फंक्शन्स का उपयोग होता है।</text><text x="48" y="470" font-size="16" fill="#334155">टेक्स्ट फंक्शन्स में अपर और लोअर अक्षरों में बदलने के विकल्प होते</text><text x="48" y="495" font-size="16" fill="#334155">हैं। लेंथ फंक्शन अक्षरों की संख्या गिनता है। कॉनकेटिनेट फंक्शन दो</text>
+<text x="48" y="595" font-size="12" fill="#94a3b8">NIELIT O Level Master Portal • Topic Visual</text>
+</svg>
